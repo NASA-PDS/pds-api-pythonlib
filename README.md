@@ -1,4 +1,4 @@
-# pds-template-python
+# PDS API Service - Python Implementation
 Template repository for PDS python developments.
 
 This repository aims at being a base for new python repository used in PDS.
