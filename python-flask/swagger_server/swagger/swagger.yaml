@@ -143,7 +143,7 @@ paths:
         "500":
           description: Internal server error
       x-openapi-router-controller: swagger_server.controllers.products_controller
-  /products/collections:
+  /collections:
     get:
       tags:
       - collections
@@ -322,16 +322,12 @@ components:
       example:
         metadata: {}
         data:
-        - description: description
-          instrument: instrument
-          id: id
-          title: title
-          target: target
-        - description: description
-          instrument: instrument
-          id: id
-          title: title
-          target: target
+        - key:
+          - data
+          - data
+        - key:
+          - data
+          - data
     collection:
       required:
       - id
@@ -352,12 +348,10 @@ components:
         target:
           type: string
           description: identifier lidvid of the target of the observation
-      example:
-        description: description
-        instrument: instrument
-        id: id
-        title: title
-        target: target
+      additionalProperties:
+        type: array
+        items:
+          type: string
     PDS4Label:
       type: object
     errorMessage:

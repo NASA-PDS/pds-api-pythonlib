@@ -24,7 +24,7 @@ class TestCollectionsController(BaseTestCase):
                         ('fields', 'fields_example'),
                         ('sort', 'sort_example')]
         response = self.client.open(
-            '/PDS_APIs/pds_federated_api/0.1.0/products/collections',
+            '/PDS_APIs/pds_federated_api/0.1.0/collections',
             method='GET',
             query_string=query_string)
         self.assert200(response,
