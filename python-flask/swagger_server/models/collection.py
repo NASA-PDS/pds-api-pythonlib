@@ -14,15 +14,45 @@ class Collection(Model):
 
     Do not edit the class manually.
     """
-    def __init__(self):  # noqa: E501
+    def __init__(self, id: str=None, title: str=None, description: str=None, instrument: List[str]=None, target: List[str]=None, optional_properties: Dict[str, List[str]]=None):  # noqa: E501
         """Collection - a model defined in Swagger
 
+        :param id: The id of this Collection.  # noqa: E501
+        :type id: str
+        :param title: The title of this Collection.  # noqa: E501
+        :type title: str
+        :param description: The description of this Collection.  # noqa: E501
+        :type description: str
+        :param instrument: The instrument of this Collection.  # noqa: E501
+        :type instrument: List[str]
+        :param target: The target of this Collection.  # noqa: E501
+        :type target: List[str]
+        :param optional_properties: The optional_properties of this Collection.  # noqa: E501
+        :type optional_properties: Dict[str, List[str]]
         """
         self.swagger_types = {
+            'id': str,
+            'title': str,
+            'description': str,
+            'instrument': List[str],
+            'target': List[str],
+            'optional_properties': Dict[str, List[str]]
         }
 
         self.attribute_map = {
+            'id': 'id',
+            'title': 'title',
+            'description': 'description',
+            'instrument': 'instrument',
+            'target': 'target',
+            'optional_properties': 'optional_properties'
         }
+        self._id = id
+        self._title = title
+        self._description = description
+        self._instrument = instrument
+        self._target = target
+        self._optional_properties = optional_properties
 
     @classmethod
     def from_dict(cls, dikt) -> 'Collection':
@@ -34,3 +64,139 @@ class Collection(Model):
         :rtype: Collection
         """
         return util.deserialize_model(dikt, cls)
+
+    @property
+    def id(self) -> str:
+        """Gets the id of this Collection.
+
+        identifier lidvid of the collection  # noqa: E501
+
+        :return: The id of this Collection.
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id: str):
+        """Sets the id of this Collection.
+
+        identifier lidvid of the collection  # noqa: E501
+
+        :param id: The id of this Collection.
+        :type id: str
+        """
+        if id is None:
+            raise ValueError("Invalid value for `id`, must not be `None`")  # noqa: E501
+
+        self._id = id
+
+    @property
+    def title(self) -> str:
+        """Gets the title of this Collection.
+
+
+        :return: The title of this Collection.
+        :rtype: str
+        """
+        return self._title
+
+    @title.setter
+    def title(self, title: str):
+        """Sets the title of this Collection.
+
+
+        :param title: The title of this Collection.
+        :type title: str
+        """
+        if title is None:
+            raise ValueError("Invalid value for `title`, must not be `None`")  # noqa: E501
+
+        self._title = title
+
+    @property
+    def description(self) -> str:
+        """Gets the description of this Collection.
+
+
+        :return: The description of this Collection.
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description: str):
+        """Sets the description of this Collection.
+
+
+        :param description: The description of this Collection.
+        :type description: str
+        """
+
+        self._description = description
+
+    @property
+    def instrument(self) -> List[str]:
+        """Gets the instrument of this Collection.
+
+        identifier lidvid of the instrument or procedure generating the data  # noqa: E501
+
+        :return: The instrument of this Collection.
+        :rtype: List[str]
+        """
+        return self._instrument
+
+    @instrument.setter
+    def instrument(self, instrument: List[str]):
+        """Sets the instrument of this Collection.
+
+        identifier lidvid of the instrument or procedure generating the data  # noqa: E501
+
+        :param instrument: The instrument of this Collection.
+        :type instrument: List[str]
+        """
+
+        self._instrument = instrument
+
+    @property
+    def target(self) -> List[str]:
+        """Gets the target of this Collection.
+
+        identifier lidvid of the target of the observation  # noqa: E501
+
+        :return: The target of this Collection.
+        :rtype: List[str]
+        """
+        return self._target
+
+    @target.setter
+    def target(self, target: List[str]):
+        """Sets the target of this Collection.
+
+        identifier lidvid of the target of the observation  # noqa: E501
+
+        :param target: The target of this Collection.
+        :type target: List[str]
+        """
+
+        self._target = target
+
+    @property
+    def optional_properties(self) -> Dict[str, List[str]]:
+        """Gets the optional_properties of this Collection.
+
+
+        :return: The optional_properties of this Collection.
+        :rtype: Dict[str, List[str]]
+        """
+        return self._optional_properties
+
+    @optional_properties.setter
+    def optional_properties(self, optional_properties: Dict[str, List[str]]):
+        """Sets the optional_properties of this Collection.
+
+
+        :param optional_properties: The optional_properties of this Collection.
+        :type optional_properties: Dict[str, List[str]]
+        """
+
+        self._optional_properties = optional_properties

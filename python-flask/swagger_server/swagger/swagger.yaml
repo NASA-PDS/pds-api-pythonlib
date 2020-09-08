@@ -322,12 +322,32 @@ components:
       example:
         metadata: {}
         data:
-        - key:
-          - data
-          - data
-        - key:
-          - data
-          - data
+        - optional_properties:
+            key:
+            - optional_properties
+            - optional_properties
+          description: description
+          instrument:
+          - instrument
+          - instrument
+          id: id
+          title: title
+          target:
+          - target
+          - target
+        - optional_properties:
+            key:
+            - optional_properties
+            - optional_properties
+          description: description
+          instrument:
+          - instrument
+          - instrument
+          id: id
+          title: title
+          target:
+          - target
+          - target
     collection:
       required:
       - id
@@ -342,16 +362,36 @@ components:
         description:
           type: string
         instrument:
-          type: string
+          type: array
           description: identifier lidvid of the instrument or procedure generating
             the data
+          items:
+            type: string
         target:
-          type: string
+          type: array
           description: identifier lidvid of the target of the observation
-      additionalProperties:
-        type: array
-        items:
-          type: string
+          items:
+            type: string
+        optional_properties:
+          type: object
+          additionalProperties:
+            type: array
+            items:
+              type: string
+      example:
+        optional_properties:
+          key:
+          - optional_properties
+          - optional_properties
+        description: description
+        instrument:
+        - instrument
+        - instrument
+        id: id
+        title: title
+        target:
+        - target
+        - target
     PDS4Label:
       type: object
     errorMessage:
