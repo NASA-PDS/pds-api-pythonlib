@@ -14,7 +14,7 @@ class Collection(Model):
 
     Do not edit the class manually.
     """
-    def __init__(self, id: str=None, title: str=None, description: str=None, instrument: List[str]=None, target: List[str]=None, optional_properties: Dict[str, List[str]]=None):  # noqa: E501
+    def __init__(self, id: str=None, title: str=None, description: str=None, instruments: List[str]=None, targets: List[str]=None, optional_properties: Dict[str, List[str]]=None):  # noqa: E501
         """Collection - a model defined in Swagger
 
         :param id: The id of this Collection.  # noqa: E501
@@ -23,10 +23,10 @@ class Collection(Model):
         :type title: str
         :param description: The description of this Collection.  # noqa: E501
         :type description: str
-        :param instrument: The instrument of this Collection.  # noqa: E501
-        :type instrument: List[str]
-        :param target: The target of this Collection.  # noqa: E501
-        :type target: List[str]
+        :param instruments: The instruments of this Collection.  # noqa: E501
+        :type instruments: List[str]
+        :param targets: The targets of this Collection.  # noqa: E501
+        :type targets: List[str]
         :param optional_properties: The optional_properties of this Collection.  # noqa: E501
         :type optional_properties: Dict[str, List[str]]
         """
@@ -34,8 +34,8 @@ class Collection(Model):
             'id': str,
             'title': str,
             'description': str,
-            'instrument': List[str],
-            'target': List[str],
+            'instruments': List[str],
+            'targets': List[str],
             'optional_properties': Dict[str, List[str]]
         }
 
@@ -43,15 +43,15 @@ class Collection(Model):
             'id': 'id',
             'title': 'title',
             'description': 'description',
-            'instrument': 'instrument',
-            'target': 'target',
+            'instruments': 'instruments',
+            'targets': 'targets',
             'optional_properties': 'optional_properties'
         }
         self._id = id
         self._title = title
         self._description = description
-        self._instrument = instrument
-        self._target = target
+        self._instruments = instruments
+        self._targets = targets
         self._optional_properties = optional_properties
 
     @classmethod
@@ -135,50 +135,50 @@ class Collection(Model):
         self._description = description
 
     @property
-    def instrument(self) -> List[str]:
-        """Gets the instrument of this Collection.
+    def instruments(self) -> List[str]:
+        """Gets the instruments of this Collection.
 
         identifier lidvid of the instrument or procedure generating the data  # noqa: E501
 
-        :return: The instrument of this Collection.
+        :return: The instruments of this Collection.
         :rtype: List[str]
         """
-        return self._instrument
+        return self._instruments
 
-    @instrument.setter
-    def instrument(self, instrument: List[str]):
-        """Sets the instrument of this Collection.
+    @instruments.setter
+    def instruments(self, instruments: List[str]):
+        """Sets the instruments of this Collection.
 
         identifier lidvid of the instrument or procedure generating the data  # noqa: E501
 
-        :param instrument: The instrument of this Collection.
-        :type instrument: List[str]
+        :param instruments: The instruments of this Collection.
+        :type instruments: List[str]
         """
 
-        self._instrument = instrument
+        self._instruments = instruments
 
     @property
-    def target(self) -> List[str]:
-        """Gets the target of this Collection.
+    def targets(self) -> List[str]:
+        """Gets the targets of this Collection.
 
         identifier lidvid of the target of the observation  # noqa: E501
 
-        :return: The target of this Collection.
+        :return: The targets of this Collection.
         :rtype: List[str]
         """
-        return self._target
+        return self._targets
 
-    @target.setter
-    def target(self, target: List[str]):
-        """Sets the target of this Collection.
+    @targets.setter
+    def targets(self, targets: List[str]):
+        """Sets the targets of this Collection.
 
         identifier lidvid of the target of the observation  # noqa: E501
 
-        :param target: The target of this Collection.
-        :type target: List[str]
+        :param targets: The targets of this Collection.
+        :type targets: List[str]
         """
 
-        self._target = target
+        self._targets = targets
 
     @property
     def optional_properties(self) -> Dict[str, List[str]]:

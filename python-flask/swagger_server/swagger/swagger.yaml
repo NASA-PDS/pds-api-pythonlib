@@ -326,28 +326,28 @@ components:
             key:
             - optional_properties
             - optional_properties
+          instruments:
+          - instruments
+          - instruments
           description: description
-          instrument:
-          - instrument
-          - instrument
           id: id
           title: title
-          target:
-          - target
-          - target
+          targets:
+          - targets
+          - targets
         - optional_properties:
             key:
             - optional_properties
             - optional_properties
+          instruments:
+          - instruments
+          - instruments
           description: description
-          instrument:
-          - instrument
-          - instrument
           id: id
           title: title
-          target:
-          - target
-          - target
+          targets:
+          - targets
+          - targets
     collection:
       required:
       - id
@@ -361,13 +361,13 @@ components:
           type: string
         description:
           type: string
-        instrument:
+        instruments:
           type: array
           description: identifier lidvid of the instrument or procedure generating
             the data
           items:
             type: string
-        target:
+        targets:
           type: array
           description: identifier lidvid of the target of the observation
           items:
@@ -383,15 +383,15 @@ components:
           key:
           - optional_properties
           - optional_properties
+        instruments:
+        - instruments
+        - instruments
         description: description
-        instrument:
-        - instrument
-        - instrument
         id: id
         title: title
-        target:
-        - target
-        - target
+        targets:
+        - targets
+        - targets
     PDS4Label:
       type: object
     errorMessage:
