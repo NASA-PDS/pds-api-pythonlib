@@ -7,6 +7,7 @@ from typing import List, Dict  # noqa: F401
 
 from swagger_server.models.base_model_ import Model
 from swagger_server.models.collection import Collection  # noqa: F401,E501
+from swagger_server.models.metadata import Metadata  # noqa: F401,E501
 from swagger_server import util
 
 
@@ -15,16 +16,16 @@ class Collections(Model):
 
     Do not edit the class manually.
     """
-    def __init__(self, metadata: object=None, data: List[Collection]=None):  # noqa: E501
+    def __init__(self, metadata: Metadata=None, data: List[Collection]=None):  # noqa: E501
         """Collections - a model defined in Swagger
 
         :param metadata: The metadata of this Collections.  # noqa: E501
-        :type metadata: object
+        :type metadata: Metadata
         :param data: The data of this Collections.  # noqa: E501
         :type data: List[Collection]
         """
         self.swagger_types = {
-            'metadata': object,
+            'metadata': Metadata,
             'data': List[Collection]
         }
 
@@ -47,22 +48,22 @@ class Collections(Model):
         return util.deserialize_model(dikt, cls)
 
     @property
-    def metadata(self) -> object:
+    def metadata(self) -> Metadata:
         """Gets the metadata of this Collections.
 
 
         :return: The metadata of this Collections.
-        :rtype: object
+        :rtype: Metadata
         """
         return self._metadata
 
     @metadata.setter
-    def metadata(self, metadata: object):
+    def metadata(self, metadata: Metadata):
         """Sets the metadata of this Collections.
 
 
         :param metadata: The metadata of this Collections.
-        :type metadata: object
+        :type metadata: Metadata
         """
         if metadata is None:
             raise ValueError("Invalid value for `metadata`, must not be `None`")  # noqa: E501

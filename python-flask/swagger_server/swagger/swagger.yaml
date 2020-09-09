@@ -314,13 +314,19 @@ components:
       type: object
       properties:
         metadata:
-          type: object
+          $ref: '#/components/schemas/metadata'
         data:
           type: array
           items:
             $ref: '#/components/schemas/collection'
       example:
-        metadata: {}
+        metadata:
+          q: q
+          start: 0
+          limit: 6
+          sort:
+          - sort
+          - sort
         data:
         - optional_properties:
             key:
@@ -348,6 +354,26 @@ components:
           targets:
           - targets
           - targets
+    metadata:
+      type: object
+      properties:
+        q:
+          type: string
+        start:
+          type: integer
+        limit:
+          type: integer
+        sort:
+          type: array
+          items:
+            type: string
+      example:
+        q: q
+        start: 0
+        limit: 6
+        sort:
+        - sort
+        - sort
     collection:
       required:
       - id
