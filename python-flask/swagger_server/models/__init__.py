@@ -4,7 +4,7 @@
 from __future__ import absolute_import
 # import models into model package
 from swagger_server.models.capabilities import Capabilities
-from swagger_server.models.capabilities_inner import CapabilitiesInner
+from swagger_server.models.capability import Capability
 from swagger_server.models.collection import Collection
 from swagger_server.models.collections import Collections
 from swagger_server.models.error_message import ErrorMessage

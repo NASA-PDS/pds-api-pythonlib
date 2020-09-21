@@ -276,7 +276,20 @@ components:
       - action: routes
         version: 0.1
       items:
-        $ref: '#/components/schemas/capabilities_inner'
+        $ref: '#/components/schemas/capability'
+    capability:
+      required:
+      - action
+      - version
+      type: object
+      properties:
+        action:
+          type: string
+        version:
+          type: string
+      example:
+      - action: collections
+        version: 0.1
     routes:
       type: array
       example:
@@ -441,14 +454,4 @@ components:
         resource: /collections
         query: q=mission qt 12
         message: query operator gt not supported on field mission
-    capabilities_inner:
-      required:
-      - action
-      - version
-      type: object
-      properties:
-        action:
-          type: string
-        version:
-          type: string
 
