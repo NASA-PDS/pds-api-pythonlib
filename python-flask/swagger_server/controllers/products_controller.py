@@ -1,7 +1,8 @@
 import connexion
 import six
 
-from swagger_server.models.pds4_label import PDS4Label  # noqa: E501
+from swagger_server.models.product import Product  # noqa: E501
+from swagger_server.models.products import Products  # noqa: E501
 from swagger_server import util
 
 
@@ -21,7 +22,7 @@ def products(start=None, limit=None, q=None, fields=None, sort=None):  # noqa: E
     :param sort: sort results, syntax asc(field0),desc(field1)
     :type sort: List[str]
 
-    :rtype: PDS4Label
+    :rtype: Products
     """
     return 'do some magic!'
 
@@ -34,6 +35,6 @@ def products_by_lidvid(lidvid):  # noqa: E501
     :param lidvid: lidvid (urn)
     :type lidvid: str
 
-    :rtype: PDS4Label
+    :rtype: Product
     """
     return 'do some magic!'

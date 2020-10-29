@@ -110,7 +110,7 @@ paths:
           content:
             application/xml:
               schema:
-                $ref: '#/components/schemas/PDS4Label'
+                $ref: '#/components/schemas/products'
         "404":
           description: lidvid not found
         "500":
@@ -137,7 +137,7 @@ paths:
           content:
             application/xml:
               schema:
-                $ref: '#/components/schemas/PDS4Label'
+                $ref: '#/components/schemas/product'
         "404":
           description: lidvid not found
         "500":
@@ -207,10 +207,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/collections'
+                $ref: '#/components/schemas/products'
             text/html:
               schema:
-                $ref: '#/components/schemas/collections'
+                $ref: '#/components/schemas/products'
         "400":
           description: Bad request
           content:
@@ -323,7 +323,7 @@ components:
           type: string
         url:
           type: string
-    collections:
+    products:
       required:
       - data
       - metadata
@@ -334,7 +334,7 @@ components:
         data:
           type: array
           items:
-            $ref: '#/components/schemas/collection'
+            $ref: '#/components/schemas/product'
       example:
         metadata:
           q: q
@@ -357,6 +357,7 @@ components:
             key:
             - properties
             - properties
+          pds4_label_url: pds4_label_url
         - procedures:
           - procedures
           - procedures
@@ -370,6 +371,7 @@ components:
             key:
             - properties
             - properties
+          pds4_label_url: pds4_label_url
     metadata:
       type: object
       properties:
@@ -390,7 +392,7 @@ components:
         sort:
         - sort
         - sort
-    collection:
+    product:
       required:
       - id
       - update_time
@@ -415,6 +417,8 @@ components:
             observation (for concept see https://en.wikipedia.org/wiki/Observations_and_Measurements)
           items:
             type: string
+        pds4_label_url:
+          type: string
         properties:
           type: object
           additionalProperties:
@@ -435,8 +439,7 @@ components:
           key:
           - properties
           - properties
-    PDS4Label:
-      type: object
+        pds4_label_url: pds4_label_url
     errorMessage:
       required:
       - message

@@ -1,8 +1,8 @@
 import connexion
 import six
 
-from swagger_server.models.collections import Collections  # noqa: E501
 from swagger_server.models.error_message import ErrorMessage  # noqa: E501
+from swagger_server.models.products import Products  # noqa: E501
 from swagger_server import util
 
 
@@ -22,6 +22,6 @@ def get_collection(start=None, limit=None, q=None, fields=None, sort=None):  # n
     :param sort: sort results, syntax asc(field0),desc(field1)
     :type sort: List[str]
 
-    :rtype: Collections
+    :rtype: Products
     """
     return 'do some magic!'
