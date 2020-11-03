@@ -6,7 +6,7 @@ from datetime import date, datetime  # noqa: F401
 from typing import List, Dict  # noqa: F401
 
 from swagger_server.models.base_model_ import Model
-from swagger_server.models.ref import Ref  # noqa: F401,E501
+from swagger_server.models.reference import Reference  # noqa: F401,E501
 from swagger_server import util
 
 
@@ -15,7 +15,7 @@ class Product(Model):
 
     Do not edit the class manually.
     """
-    def __init__(self, id: str=None, type: str=None, title: str=None, description: str=None, procedures: List[Ref]=None, feature_of_interest: List[str]=None, pds4_label_url: str=None, properties: Dict[str, List[str]]=None):  # noqa: E501
+    def __init__(self, id: str=None, type: str=None, title: str=None, description: str=None, procedures: List[Reference]=None, feature_of_interest: List[str]=None, pds4_label_url: str=None, properties: Dict[str, List[str]]=None):  # noqa: E501
         """Product - a model defined in Swagger
 
         :param id: The id of this Product.  # noqa: E501
@@ -27,7 +27,7 @@ class Product(Model):
         :param description: The description of this Product.  # noqa: E501
         :type description: str
         :param procedures: The procedures of this Product.  # noqa: E501
-        :type procedures: List[Ref]
+        :type procedures: List[Reference]
         :param feature_of_interest: The feature_of_interest of this Product.  # noqa: E501
         :type feature_of_interest: List[str]
         :param pds4_label_url: The pds4_label_url of this Product.  # noqa: E501
@@ -40,7 +40,7 @@ class Product(Model):
             'type': str,
             'title': str,
             'description': str,
-            'procedures': List[Ref],
+            'procedures': List[Reference],
             'feature_of_interest': List[str],
             'pds4_label_url': str,
             'properties': Dict[str, List[str]]
@@ -165,24 +165,24 @@ class Product(Model):
         self._description = description
 
     @property
-    def procedures(self) -> List[Ref]:
+    def procedures(self) -> List[Reference]:
         """Gets the procedures of this Product.
 
         list of instruments or procedures generating the data (for concept see https://en.wikipedia.org/wiki/Observations_and_Measurements)  # noqa: E501
 
         :return: The procedures of this Product.
-        :rtype: List[Ref]
+        :rtype: List[Reference]
         """
         return self._procedures
 
     @procedures.setter
-    def procedures(self, procedures: List[Ref]):
+    def procedures(self, procedures: List[Reference]):
         """Sets the procedures of this Product.
 
         list of instruments or procedures generating the data (for concept see https://en.wikipedia.org/wiki/Observations_and_Measurements)  # noqa: E501
 
         :param procedures: The procedures of this Product.
-        :type procedures: List[Ref]
+        :type procedures: List[Reference]
         """
 
         self._procedures = procedures

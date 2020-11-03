@@ -426,7 +426,7 @@ components:
           description: list of instruments or procedures generating the data (for
             concept see https://en.wikipedia.org/wiki/Observations_and_Measurements)
           items:
-            $ref: '#/components/schemas/ref'
+            $ref: '#/components/schemas/reference'
         feature_of_interest:
           type: array
           description: identifier lidvid of the target of or feature of interest the
@@ -463,7 +463,7 @@ components:
           - properties
           - properties
         pds4_label_url: pds4_label_url
-    ref:
+    reference:
       required:
       - name
       - ref
