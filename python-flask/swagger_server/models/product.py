@@ -15,7 +15,7 @@ class Product(Model):
 
     Do not edit the class manually.
     """
-    def __init__(self, id: str=None, type: str=None, title: str=None, description: str=None, procedures: List[Reference]=None, feature_of_interest: List[str]=None, pds4_label_url: str=None, properties: Dict[str, object]=None):  # noqa: E501
+    def __init__(self, id: str=None, type: str=None, title: str=None, description: str=None, observing_system_components: List[Reference]=None, targets: List[str]=None, pds4_label_url: str=None, properties: Dict[str, object]=None):  # noqa: E501
         """Product - a model defined in Swagger
 
         :param id: The id of this Product.  # noqa: E501
@@ -26,10 +26,10 @@ class Product(Model):
         :type title: str
         :param description: The description of this Product.  # noqa: E501
         :type description: str
-        :param procedures: The procedures of this Product.  # noqa: E501
-        :type procedures: List[Reference]
-        :param feature_of_interest: The feature_of_interest of this Product.  # noqa: E501
-        :type feature_of_interest: List[str]
+        :param observing_system_components: The observing_system_components of this Product.  # noqa: E501
+        :type observing_system_components: List[Reference]
+        :param targets: The targets of this Product.  # noqa: E501
+        :type targets: List[str]
         :param pds4_label_url: The pds4_label_url of this Product.  # noqa: E501
         :type pds4_label_url: str
         :param properties: The properties of this Product.  # noqa: E501
@@ -40,8 +40,8 @@ class Product(Model):
             'type': str,
             'title': str,
             'description': str,
-            'procedures': List[Reference],
-            'feature_of_interest': List[str],
+            'observing_system_components': List[Reference],
+            'targets': List[str],
             'pds4_label_url': str,
             'properties': Dict[str, object]
         }
@@ -51,8 +51,8 @@ class Product(Model):
             'type': 'type',
             'title': 'title',
             'description': 'description',
-            'procedures': 'procedures',
-            'feature_of_interest': 'feature_of_interest',
+            'observing_system_components': 'observing_system_components',
+            'targets': 'targets',
             'pds4_label_url': 'pds4_label_url',
             'properties': 'properties'
         }
@@ -60,8 +60,8 @@ class Product(Model):
         self._type = type
         self._title = title
         self._description = description
-        self._procedures = procedures
-        self._feature_of_interest = feature_of_interest
+        self._observing_system_components = observing_system_components
+        self._targets = targets
         self._pds4_label_url = pds4_label_url
         self._properties = properties
 
@@ -165,50 +165,50 @@ class Product(Model):
         self._description = description
 
     @property
-    def procedures(self) -> List[Reference]:
-        """Gets the procedures of this Product.
+    def observing_system_components(self) -> List[Reference]:
+        """Gets the observing_system_components of this Product.
 
         list of instruments or procedures generating the data (for concept see https://en.wikipedia.org/wiki/Observations_and_Measurements)  # noqa: E501
 
-        :return: The procedures of this Product.
+        :return: The observing_system_components of this Product.
         :rtype: List[Reference]
         """
-        return self._procedures
+        return self._observing_system_components
 
-    @procedures.setter
-    def procedures(self, procedures: List[Reference]):
-        """Sets the procedures of this Product.
+    @observing_system_components.setter
+    def observing_system_components(self, observing_system_components: List[Reference]):
+        """Sets the observing_system_components of this Product.
 
         list of instruments or procedures generating the data (for concept see https://en.wikipedia.org/wiki/Observations_and_Measurements)  # noqa: E501
 
-        :param procedures: The procedures of this Product.
-        :type procedures: List[Reference]
+        :param observing_system_components: The observing_system_components of this Product.
+        :type observing_system_components: List[Reference]
         """
 
-        self._procedures = procedures
+        self._observing_system_components = observing_system_components
 
     @property
-    def feature_of_interest(self) -> List[str]:
-        """Gets the feature_of_interest of this Product.
+    def targets(self) -> List[str]:
+        """Gets the targets of this Product.
 
         identifier lidvid of the target of or feature of interest the observation (for concept see https://en.wikipedia.org/wiki/Observations_and_Measurements)  # noqa: E501
 
-        :return: The feature_of_interest of this Product.
+        :return: The targets of this Product.
         :rtype: List[str]
         """
-        return self._feature_of_interest
+        return self._targets
 
-    @feature_of_interest.setter
-    def feature_of_interest(self, feature_of_interest: List[str]):
-        """Sets the feature_of_interest of this Product.
+    @targets.setter
+    def targets(self, targets: List[str]):
+        """Sets the targets of this Product.
 
         identifier lidvid of the target of or feature of interest the observation (for concept see https://en.wikipedia.org/wiki/Observations_and_Measurements)  # noqa: E501
 
-        :param feature_of_interest: The feature_of_interest of this Product.
-        :type feature_of_interest: List[str]
+        :param targets: The targets of this Product.
+        :type targets: List[str]
         """
 
-        self._feature_of_interest = feature_of_interest
+        self._targets = targets
 
     @property
     def pds4_label_url(self) -> str:
