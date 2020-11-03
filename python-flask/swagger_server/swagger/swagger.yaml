@@ -345,13 +345,20 @@ components:
           - sort
         data:
         - procedures:
-          - procedures
-          - procedures
+          - ref: ref
+            description: description
+            title: title
+            type: type
+          - ref: ref
+            description: description
+            title: title
+            type: type
           feature_of_interest:
           - feature_of_interest
           - feature_of_interest
           description: description
           id: id
+          type: type
           title: title
           properties:
             key:
@@ -359,13 +366,20 @@ components:
             - properties
           pds4_label_url: pds4_label_url
         - procedures:
-          - procedures
-          - procedures
+          - ref: ref
+            description: description
+            title: title
+            type: type
+          - ref: ref
+            description: description
+            title: title
+            type: type
           feature_of_interest:
           - feature_of_interest
           - feature_of_interest
           description: description
           id: id
+          type: type
           title: title
           properties:
             key:
@@ -401,16 +415,18 @@ components:
         id:
           type: string
           description: identifier lidvid of the collection
+        type:
+          type: string
         title:
           type: string
         description:
           type: string
         procedures:
           type: array
-          description: identifier lidvid of the instrument or procedure generating
-            the data (for concept see https://en.wikipedia.org/wiki/Observations_and_Measurements)
+          description: list of instruments or procedures generating the data (for
+            concept see https://en.wikipedia.org/wiki/Observations_and_Measurements)
           items:
-            type: string
+            $ref: '#/components/schemas/ref'
         feature_of_interest:
           type: array
           description: identifier lidvid of the target of or feature of interest the
@@ -427,19 +443,53 @@ components:
               type: string
       example:
         procedures:
-        - procedures
-        - procedures
+        - ref: ref
+          description: description
+          title: title
+          type: type
+        - ref: ref
+          description: description
+          title: title
+          type: type
         feature_of_interest:
         - feature_of_interest
         - feature_of_interest
         description: description
         id: id
+        type: type
         title: title
         properties:
           key:
           - properties
           - properties
         pds4_label_url: pds4_label_url
+    ref:
+      required:
+      - name
+      - ref
+      type: object
+      properties:
+        title:
+          type: string
+          description: name to display for the external reference
+        ref:
+          type: string
+          description: external reference, here lidvid urn
+        type:
+          type: string
+          description: type of the external reference, can be displayed as an icon
+            for example
+        description:
+          type: string
+          description: longer description for the external reference, can be displayed
+            in a tooltip
+      description: object describing a reference to a different product. TODO The
+        properties should be defined by a standard (xlink, json-ld) to be chosen
+      example:
+        ref: ref
+        description: description
+        title: title
+        type: type
     errorMessage:
       required:
       - message

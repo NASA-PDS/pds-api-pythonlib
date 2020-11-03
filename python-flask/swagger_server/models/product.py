@@ -6,6 +6,7 @@ from datetime import date, datetime  # noqa: F401
 from typing import List, Dict  # noqa: F401
 
 from swagger_server.models.base_model_ import Model
+from swagger_server.models.ref import Ref  # noqa: F401,E501
 from swagger_server import util
 
 
@@ -14,17 +15,19 @@ class Product(Model):
 
     Do not edit the class manually.
     """
-    def __init__(self, id: str=None, title: str=None, description: str=None, procedures: List[str]=None, feature_of_interest: List[str]=None, pds4_label_url: str=None, properties: Dict[str, List[str]]=None):  # noqa: E501
+    def __init__(self, id: str=None, type: str=None, title: str=None, description: str=None, procedures: List[Ref]=None, feature_of_interest: List[str]=None, pds4_label_url: str=None, properties: Dict[str, List[str]]=None):  # noqa: E501
         """Product - a model defined in Swagger
 
         :param id: The id of this Product.  # noqa: E501
         :type id: str
+        :param type: The type of this Product.  # noqa: E501
+        :type type: str
         :param title: The title of this Product.  # noqa: E501
         :type title: str
         :param description: The description of this Product.  # noqa: E501
         :type description: str
         :param procedures: The procedures of this Product.  # noqa: E501
-        :type procedures: List[str]
+        :type procedures: List[Ref]
         :param feature_of_interest: The feature_of_interest of this Product.  # noqa: E501
         :type feature_of_interest: List[str]
         :param pds4_label_url: The pds4_label_url of this Product.  # noqa: E501
@@ -34,9 +37,10 @@ class Product(Model):
         """
         self.swagger_types = {
             'id': str,
+            'type': str,
             'title': str,
             'description': str,
-            'procedures': List[str],
+            'procedures': List[Ref],
             'feature_of_interest': List[str],
             'pds4_label_url': str,
             'properties': Dict[str, List[str]]
@@ -44,6 +48,7 @@ class Product(Model):
 
         self.attribute_map = {
             'id': 'id',
+            'type': 'type',
             'title': 'title',
             'description': 'description',
             'procedures': 'procedures',
@@ -52,6 +57,7 @@ class Product(Model):
             'properties': 'properties'
         }
         self._id = id
+        self._type = type
         self._title = title
         self._description = description
         self._procedures = procedures
@@ -96,6 +102,27 @@ class Product(Model):
         self._id = id
 
     @property
+    def type(self) -> str:
+        """Gets the type of this Product.
+
+
+        :return: The type of this Product.
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type: str):
+        """Sets the type of this Product.
+
+
+        :param type: The type of this Product.
+        :type type: str
+        """
+
+        self._type = type
+
+    @property
     def title(self) -> str:
         """Gets the title of this Product.
 
@@ -138,24 +165,24 @@ class Product(Model):
         self._description = description
 
     @property
-    def procedures(self) -> List[str]:
+    def procedures(self) -> List[Ref]:
         """Gets the procedures of this Product.
 
-        identifier lidvid of the instrument or procedure generating the data (for concept see https://en.wikipedia.org/wiki/Observations_and_Measurements)  # noqa: E501
+        list of instruments or procedures generating the data (for concept see https://en.wikipedia.org/wiki/Observations_and_Measurements)  # noqa: E501
 
         :return: The procedures of this Product.
-        :rtype: List[str]
+        :rtype: List[Ref]
         """
         return self._procedures
 
     @procedures.setter
-    def procedures(self, procedures: List[str]):
+    def procedures(self, procedures: List[Ref]):
         """Sets the procedures of this Product.
 
-        identifier lidvid of the instrument or procedure generating the data (for concept see https://en.wikipedia.org/wiki/Observations_and_Measurements)  # noqa: E501
+        list of instruments or procedures generating the data (for concept see https://en.wikipedia.org/wiki/Observations_and_Measurements)  # noqa: E501
 
         :param procedures: The procedures of this Product.
-        :type procedures: List[str]
+        :type procedures: List[Ref]
         """
 
         self._procedures = procedures
