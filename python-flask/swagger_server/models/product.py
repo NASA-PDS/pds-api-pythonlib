@@ -15,7 +15,7 @@ class Product(Model):
 
     Do not edit the class manually.
     """
-    def __init__(self, id: str=None, type: str=None, title: str=None, description: str=None, procedures: List[Reference]=None, feature_of_interest: List[str]=None, pds4_label_url: str=None, properties: Dict[str, List[str]]=None):  # noqa: E501
+    def __init__(self, id: str=None, type: str=None, title: str=None, description: str=None, procedures: List[Reference]=None, feature_of_interest: List[str]=None, pds4_label_url: str=None, properties: Dict[str, object]=None):  # noqa: E501
         """Product - a model defined in Swagger
 
         :param id: The id of this Product.  # noqa: E501
@@ -33,7 +33,7 @@ class Product(Model):
         :param pds4_label_url: The pds4_label_url of this Product.  # noqa: E501
         :type pds4_label_url: str
         :param properties: The properties of this Product.  # noqa: E501
-        :type properties: Dict[str, List[str]]
+        :type properties: Dict[str, object]
         """
         self.swagger_types = {
             'id': str,
@@ -43,7 +43,7 @@ class Product(Model):
             'procedures': List[Reference],
             'feature_of_interest': List[str],
             'pds4_label_url': str,
-            'properties': Dict[str, List[str]]
+            'properties': Dict[str, object]
         }
 
         self.attribute_map = {
@@ -232,22 +232,22 @@ class Product(Model):
         self._pds4_label_url = pds4_label_url
 
     @property
-    def properties(self) -> Dict[str, List[str]]:
+    def properties(self) -> Dict[str, object]:
         """Gets the properties of this Product.
 
 
         :return: The properties of this Product.
-        :rtype: Dict[str, List[str]]
+        :rtype: Dict[str, object]
         """
         return self._properties
 
     @properties.setter
-    def properties(self, properties: Dict[str, List[str]]):
+    def properties(self, properties: Dict[str, object]):
         """Sets the properties of this Product.
 
 
         :param properties: The properties of this Product.
-        :type properties: Dict[str, List[str]]
+        :type properties: Dict[str, object]
         """
 
         self._properties = properties

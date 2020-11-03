@@ -361,9 +361,7 @@ components:
           type: type
           title: title
           properties:
-            key:
-            - properties
-            - properties
+            key: {}
           pds4_label_url: pds4_label_url
         - procedures:
           - ref: ref
@@ -382,9 +380,7 @@ components:
           type: type
           title: title
           properties:
-            key:
-            - properties
-            - properties
+            key: {}
           pds4_label_url: pds4_label_url
     metadata:
       type: object
@@ -438,9 +434,7 @@ components:
         properties:
           type: object
           additionalProperties:
-            type: array
-            items:
-              type: string
+            type: object
       example:
         procedures:
         - ref: ref
@@ -459,9 +453,7 @@ components:
         type: type
         title: title
         properties:
-          key:
-          - properties
-          - properties
+          key: {}
         pds4_label_url: pds4_label_url
     reference:
       required:
