@@ -6,6 +6,7 @@ from datetime import date, datetime  # noqa: F401
 from typing import List, Dict  # noqa: F401
 
 from swagger_server.models.base_model_ import Model
+from swagger_server.models.metadata import Metadata  # noqa: F401,E501
 from swagger_server.models.reference import Reference  # noqa: F401,E501
 from swagger_server import util
 
@@ -15,7 +16,7 @@ class Product(Model):
 
     Do not edit the class manually.
     """
-    def __init__(self, id: str=None, type: str=None, title: str=None, description: str=None, start_date_time: str=None, stop_date_time: str=None, update_date_time: str=None, observing_system_components: List[Reference]=None, targets: List[Reference]=None, pds4_label_url: str=None, properties: Dict[str, object]=None):  # noqa: E501
+    def __init__(self, id: str=None, type: str=None, title: str=None, description: str=None, start_date_time: str=None, stop_date_time: str=None, observing_system_components: List[Reference]=None, targets: List[Reference]=None, metadata: Metadata=None, properties: Dict[str, object]=None):  # noqa: E501
         """Product - a model defined in Swagger
 
         :param id: The id of this Product.  # noqa: E501
@@ -30,14 +31,12 @@ class Product(Model):
         :type start_date_time: str
         :param stop_date_time: The stop_date_time of this Product.  # noqa: E501
         :type stop_date_time: str
-        :param update_date_time: The update_date_time of this Product.  # noqa: E501
-        :type update_date_time: str
         :param observing_system_components: The observing_system_components of this Product.  # noqa: E501
         :type observing_system_components: List[Reference]
         :param targets: The targets of this Product.  # noqa: E501
         :type targets: List[Reference]
-        :param pds4_label_url: The pds4_label_url of this Product.  # noqa: E501
-        :type pds4_label_url: str
+        :param metadata: The metadata of this Product.  # noqa: E501
+        :type metadata: Metadata
         :param properties: The properties of this Product.  # noqa: E501
         :type properties: Dict[str, object]
         """
@@ -48,10 +47,9 @@ class Product(Model):
             'description': str,
             'start_date_time': str,
             'stop_date_time': str,
-            'update_date_time': str,
             'observing_system_components': List[Reference],
             'targets': List[Reference],
-            'pds4_label_url': str,
+            'metadata': Metadata,
             'properties': Dict[str, object]
         }
 
@@ -62,10 +60,9 @@ class Product(Model):
             'description': 'description',
             'start_date_time': 'start_date_time',
             'stop_date_time': 'stop_date_time',
-            'update_date_time': 'update_date_time',
             'observing_system_components': 'observing_system_components',
             'targets': 'targets',
-            'pds4_label_url': 'pds4_label_url',
+            'metadata': 'metadata',
             'properties': 'properties'
         }
         self._id = id
@@ -74,10 +71,9 @@ class Product(Model):
         self._description = description
         self._start_date_time = start_date_time
         self._stop_date_time = stop_date_time
-        self._update_date_time = update_date_time
         self._observing_system_components = observing_system_components
         self._targets = targets
-        self._pds4_label_url = pds4_label_url
+        self._metadata = metadata
         self._properties = properties
 
     @classmethod
@@ -226,31 +222,6 @@ class Product(Model):
         self._stop_date_time = stop_date_time
 
     @property
-    def update_date_time(self) -> str:
-        """Gets the update_date_time of this Product.
-
-        update date time of the observationin ISO8601  # noqa: E501
-
-        :return: The update_date_time of this Product.
-        :rtype: str
-        """
-        return self._update_date_time
-
-    @update_date_time.setter
-    def update_date_time(self, update_date_time: str):
-        """Sets the update_date_time of this Product.
-
-        update date time of the observationin ISO8601  # noqa: E501
-
-        :param update_date_time: The update_date_time of this Product.
-        :type update_date_time: str
-        """
-        if update_date_time is None:
-            raise ValueError("Invalid value for `update_date_time`, must not be `None`")  # noqa: E501
-
-        self._update_date_time = update_date_time
-
-    @property
     def observing_system_components(self) -> List[Reference]:
         """Gets the observing_system_components of this Product.
 
@@ -297,25 +268,25 @@ class Product(Model):
         self._targets = targets
 
     @property
-    def pds4_label_url(self) -> str:
-        """Gets the pds4_label_url of this Product.
+    def metadata(self) -> Metadata:
+        """Gets the metadata of this Product.
 
 
-        :return: The pds4_label_url of this Product.
-        :rtype: str
+        :return: The metadata of this Product.
+        :rtype: Metadata
         """
-        return self._pds4_label_url
+        return self._metadata
 
-    @pds4_label_url.setter
-    def pds4_label_url(self, pds4_label_url: str):
-        """Sets the pds4_label_url of this Product.
+    @metadata.setter
+    def metadata(self, metadata: Metadata):
+        """Sets the metadata of this Product.
 
 
-        :param pds4_label_url: The pds4_label_url of this Product.
-        :type pds4_label_url: str
+        :param metadata: The metadata of this Product.
+        :type metadata: Metadata
         """
 
-        self._pds4_label_url = pds4_label_url
+        self._metadata = metadata
 
     @property
     def properties(self) -> Dict[str, object]:

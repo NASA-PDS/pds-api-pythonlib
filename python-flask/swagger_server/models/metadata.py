@@ -14,35 +14,35 @@ class Metadata(Model):
 
     Do not edit the class manually.
     """
-    def __init__(self, q: str=None, start: int=None, limit: int=None, sort: List[str]=None):  # noqa: E501
+    def __init__(self, creation_date_time: str=None, update_date_time: str=None, version: str=None, label_url: str=None):  # noqa: E501
         """Metadata - a model defined in Swagger
 
-        :param q: The q of this Metadata.  # noqa: E501
-        :type q: str
-        :param start: The start of this Metadata.  # noqa: E501
-        :type start: int
-        :param limit: The limit of this Metadata.  # noqa: E501
-        :type limit: int
-        :param sort: The sort of this Metadata.  # noqa: E501
-        :type sort: List[str]
+        :param creation_date_time: The creation_date_time of this Metadata.  # noqa: E501
+        :type creation_date_time: str
+        :param update_date_time: The update_date_time of this Metadata.  # noqa: E501
+        :type update_date_time: str
+        :param version: The version of this Metadata.  # noqa: E501
+        :type version: str
+        :param label_url: The label_url of this Metadata.  # noqa: E501
+        :type label_url: str
         """
         self.swagger_types = {
-            'q': str,
-            'start': int,
-            'limit': int,
-            'sort': List[str]
+            'creation_date_time': str,
+            'update_date_time': str,
+            'version': str,
+            'label_url': str
         }
 
         self.attribute_map = {
-            'q': 'q',
-            'start': 'start',
-            'limit': 'limit',
-            'sort': 'sort'
+            'creation_date_time': 'creation_date_time',
+            'update_date_time': 'update_date_time',
+            'version': 'version',
+            'label_url': 'label_url'
         }
-        self._q = q
-        self._start = start
-        self._limit = limit
-        self._sort = sort
+        self._creation_date_time = creation_date_time
+        self._update_date_time = update_date_time
+        self._version = version
+        self._label_url = label_url
 
     @classmethod
     def from_dict(cls, dikt) -> 'Metadata':
@@ -56,85 +56,87 @@ class Metadata(Model):
         return util.deserialize_model(dikt, cls)
 
     @property
-    def q(self) -> str:
-        """Gets the q of this Metadata.
+    def creation_date_time(self) -> str:
+        """Gets the creation_date_time of this Metadata.
 
 
-        :return: The q of this Metadata.
+        :return: The creation_date_time of this Metadata.
         :rtype: str
         """
-        return self._q
+        return self._creation_date_time
 
-    @q.setter
-    def q(self, q: str):
-        """Sets the q of this Metadata.
+    @creation_date_time.setter
+    def creation_date_time(self, creation_date_time: str):
+        """Sets the creation_date_time of this Metadata.
 
 
-        :param q: The q of this Metadata.
-        :type q: str
+        :param creation_date_time: The creation_date_time of this Metadata.
+        :type creation_date_time: str
         """
 
-        self._q = q
+        self._creation_date_time = creation_date_time
 
     @property
-    def start(self) -> int:
-        """Gets the start of this Metadata.
+    def update_date_time(self) -> str:
+        """Gets the update_date_time of this Metadata.
 
 
-        :return: The start of this Metadata.
-        :rtype: int
+        :return: The update_date_time of this Metadata.
+        :rtype: str
         """
-        return self._start
+        return self._update_date_time
 
-    @start.setter
-    def start(self, start: int):
-        """Sets the start of this Metadata.
+    @update_date_time.setter
+    def update_date_time(self, update_date_time: str):
+        """Sets the update_date_time of this Metadata.
 
 
-        :param start: The start of this Metadata.
-        :type start: int
+        :param update_date_time: The update_date_time of this Metadata.
+        :type update_date_time: str
         """
 
-        self._start = start
+        self._update_date_time = update_date_time
 
     @property
-    def limit(self) -> int:
-        """Gets the limit of this Metadata.
+    def version(self) -> str:
+        """Gets the version of this Metadata.
 
 
-        :return: The limit of this Metadata.
-        :rtype: int
+        :return: The version of this Metadata.
+        :rtype: str
         """
-        return self._limit
+        return self._version
 
-    @limit.setter
-    def limit(self, limit: int):
-        """Sets the limit of this Metadata.
+    @version.setter
+    def version(self, version: str):
+        """Sets the version of this Metadata.
 
 
-        :param limit: The limit of this Metadata.
-        :type limit: int
+        :param version: The version of this Metadata.
+        :type version: str
         """
 
-        self._limit = limit
+        self._version = version
 
     @property
-    def sort(self) -> List[str]:
-        """Gets the sort of this Metadata.
+    def label_url(self) -> str:
+        """Gets the label_url of this Metadata.
 
 
-        :return: The sort of this Metadata.
-        :rtype: List[str]
+        :return: The label_url of this Metadata.
+        :rtype: str
         """
-        return self._sort
+        return self._label_url
 
-    @sort.setter
-    def sort(self, sort: List[str]):
-        """Sets the sort of this Metadata.
+    @label_url.setter
+    def label_url(self, label_url: str):
+        """Sets the label_url of this Metadata.
 
 
-        :param sort: The sort of this Metadata.
-        :type sort: List[str]
+        :param label_url: The label_url of this Metadata.
+        :type label_url: str
         """
+        if label_url is None:
+            raise ValueError("Invalid value for `label_url`, must not be `None`")  # noqa: E501
 
-        self._sort = sort
+        self._label_url = label_url

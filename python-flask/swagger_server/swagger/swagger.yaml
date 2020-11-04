@@ -326,17 +326,17 @@ components:
     products:
       required:
       - data
-      - metadata
+      - summary
       type: object
       properties:
-        metadata:
-          $ref: '#/components/schemas/metadata'
+        summary:
+          $ref: '#/components/schemas/summary'
         data:
           type: array
           items:
             $ref: '#/components/schemas/product'
       example:
-        metadata:
+        summary:
           q: q
           start: 0
           limit: 6
@@ -354,6 +354,11 @@ components:
             description: description
             title: title
             type: type
+          metadata:
+            creation_date_time: creation_date_time
+            version: version
+            update_date_time: update_date_time
+            label_url: label_url
           description: description
           id: id
           type: type
@@ -362,10 +367,8 @@ components:
           targets:
           - null
           - null
-          update_date_time: update_date_time
           properties:
             key: {}
-          pds4_label_url: pds4_label_url
         - stop_date_time: stop_date_time
           observing_system_components:
           - ref: ref
@@ -376,6 +379,11 @@ components:
             description: description
             title: title
             type: type
+          metadata:
+            creation_date_time: creation_date_time
+            version: version
+            update_date_time: update_date_time
+            label_url: label_url
           description: description
           id: id
           type: type
@@ -384,11 +392,9 @@ components:
           targets:
           - null
           - null
-          update_date_time: update_date_time
           properties:
             key: {}
-          pds4_label_url: pds4_label_url
-    metadata:
+    summary:
       type: object
       properties:
         q:
@@ -429,9 +435,6 @@ components:
         stop_date_time:
           type: string
           description: stop date time of the observations in ISO8601
-        update_date_time:
-          type: string
-          description: update date time of the observationin ISO8601
         observing_system_components:
           type: array
           description: list of instruments or procedures generating the data (for
@@ -444,8 +447,8 @@ components:
             observation (for concept see https://en.wikipedia.org/wiki/Observations_and_Measurements)
           items:
             $ref: '#/components/schemas/reference'
-        pds4_label_url:
-          type: string
+        metadata:
+          $ref: '#/components/schemas/metadata'
         properties:
           type: object
           additionalProperties:
@@ -461,6 +464,11 @@ components:
           description: description
           title: title
           type: type
+        metadata:
+          creation_date_time: creation_date_time
+          version: version
+          update_date_time: update_date_time
+          label_url: label_url
         description: description
         id: id
         type: type
@@ -469,10 +477,8 @@ components:
         targets:
         - null
         - null
-        update_date_time: update_date_time
         properties:
           key: {}
-        pds4_label_url: pds4_label_url
     reference:
       required:
       - name
@@ -500,6 +506,24 @@ components:
         description: description
         title: title
         type: type
+    metadata:
+      required:
+      - label_url
+      type: object
+      properties:
+        creation_date_time:
+          type: string
+        update_date_time:
+          type: string
+        version:
+          type: string
+        label_url:
+          type: string
+      example:
+        creation_date_time: creation_date_time
+        version: version
+        update_date_time: update_date_time
+        label_url: label_url
     errorMessage:
       required:
       - message

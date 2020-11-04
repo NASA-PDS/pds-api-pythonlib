@@ -6,8 +6,8 @@ from datetime import date, datetime  # noqa: F401
 from typing import List, Dict  # noqa: F401
 
 from swagger_server.models.base_model_ import Model
-from swagger_server.models.metadata import Metadata  # noqa: F401,E501
 from swagger_server.models.product import Product  # noqa: F401,E501
+from swagger_server.models.summary import Summary  # noqa: F401,E501
 from swagger_server import util
 
 
@@ -16,24 +16,24 @@ class Products(Model):
 
     Do not edit the class manually.
     """
-    def __init__(self, metadata: Metadata=None, data: List[Product]=None):  # noqa: E501
+    def __init__(self, summary: Summary=None, data: List[Product]=None):  # noqa: E501
         """Products - a model defined in Swagger
 
-        :param metadata: The metadata of this Products.  # noqa: E501
-        :type metadata: Metadata
+        :param summary: The summary of this Products.  # noqa: E501
+        :type summary: Summary
         :param data: The data of this Products.  # noqa: E501
         :type data: List[Product]
         """
         self.swagger_types = {
-            'metadata': Metadata,
+            'summary': Summary,
             'data': List[Product]
         }
 
         self.attribute_map = {
-            'metadata': 'metadata',
+            'summary': 'summary',
             'data': 'data'
         }
-        self._metadata = metadata
+        self._summary = summary
         self._data = data
 
     @classmethod
@@ -48,27 +48,27 @@ class Products(Model):
         return util.deserialize_model(dikt, cls)
 
     @property
-    def metadata(self) -> Metadata:
-        """Gets the metadata of this Products.
+    def summary(self) -> Summary:
+        """Gets the summary of this Products.
 
 
-        :return: The metadata of this Products.
-        :rtype: Metadata
+        :return: The summary of this Products.
+        :rtype: Summary
         """
-        return self._metadata
+        return self._summary
 
-    @metadata.setter
-    def metadata(self, metadata: Metadata):
-        """Sets the metadata of this Products.
+    @summary.setter
+    def summary(self, summary: Summary):
+        """Sets the summary of this Products.
 
 
-        :param metadata: The metadata of this Products.
-        :type metadata: Metadata
+        :param summary: The summary of this Products.
+        :type summary: Summary
         """
-        if metadata is None:
-            raise ValueError("Invalid value for `metadata`, must not be `None`")  # noqa: E501
+        if summary is None:
+            raise ValueError("Invalid value for `summary`, must not be `None`")  # noqa: E501
 
-        self._metadata = metadata
+        self._summary = summary
 
     @property
     def data(self) -> List[Product]:

@@ -12,3 +12,4 @@ from swagger_server.models.products import Products
 from swagger_server.models.reference import Reference
 from swagger_server.models.route import Route
 from swagger_server.models.routes import Routes
+from swagger_server.models.summary import Summary
