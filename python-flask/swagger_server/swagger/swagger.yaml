@@ -361,9 +361,9 @@ components:
             label_url: label_url
           description: description
           id: id
+          type: type
           title: title
           start_date_time: start_date_time
-          class: class
           targets:
           - null
           - null
@@ -386,9 +386,9 @@ components:
             label_url: label_url
           description: description
           id: id
+          type: type
           title: title
           start_date_time: start_date_time
-          class: class
           targets:
           - null
           - null
@@ -423,7 +423,7 @@ components:
         id:
           type: string
           description: identifier lidvid of the collection
-        class:
+        type:
           type: string
         title:
           type: string
@@ -471,9 +471,9 @@ components:
           label_url: label_url
         description: description
         id: id
+        type: type
         title: title
         start_date_time: start_date_time
-        class: class
         targets:
         - null
         - null
