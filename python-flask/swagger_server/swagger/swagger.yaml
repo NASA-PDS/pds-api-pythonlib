@@ -344,7 +344,8 @@ components:
           - sort
           - sort
         data:
-        - observing_system_components:
+        - stop_date_time: stop_date_time
+          observing_system_components:
           - ref: ref
             description: description
             title: title
@@ -357,13 +358,16 @@ components:
           id: id
           type: type
           title: title
+          start_date_time: start_date_time
           targets:
           - targets
           - targets
+          update_date_time: update_date_time
           properties:
             key: {}
           pds4_label_url: pds4_label_url
-        - observing_system_components:
+        - stop_date_time: stop_date_time
+          observing_system_components:
           - ref: ref
             description: description
             title: title
@@ -376,9 +380,11 @@ components:
           id: id
           type: type
           title: title
+          start_date_time: start_date_time
           targets:
           - targets
           - targets
+          update_date_time: update_date_time
           properties:
             key: {}
           pds4_label_url: pds4_label_url
@@ -405,7 +411,7 @@ components:
     product:
       required:
       - id
-      - update_time
+      - update_date_time
       type: object
       properties:
         id:
@@ -417,6 +423,15 @@ components:
           type: string
         description:
           type: string
+        start_date_time:
+          type: string
+          description: start date time of the observations in ISO8601
+        stop_date_time:
+          type: string
+          description: stop date time of the observations in ISO8601
+        update_date_time:
+          type: string
+          description: update date time of the observationin ISO8601
         observing_system_components:
           type: array
           description: list of instruments or procedures generating the data (for
@@ -436,6 +451,7 @@ components:
           additionalProperties:
             type: object
       example:
+        stop_date_time: stop_date_time
         observing_system_components:
         - ref: ref
           description: description
@@ -449,9 +465,11 @@ components:
         id: id
         type: type
         title: title
+        start_date_time: start_date_time
         targets:
         - targets
         - targets
+        update_date_time: update_date_time
         properties:
           key: {}
         pds4_label_url: pds4_label_url

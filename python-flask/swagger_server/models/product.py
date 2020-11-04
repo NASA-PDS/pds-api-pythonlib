@@ -15,7 +15,7 @@ class Product(Model):
 
     Do not edit the class manually.
     """
-    def __init__(self, id: str=None, type: str=None, title: str=None, description: str=None, observing_system_components: List[Reference]=None, targets: List[str]=None, pds4_label_url: str=None, properties: Dict[str, object]=None):  # noqa: E501
+    def __init__(self, id: str=None, type: str=None, title: str=None, description: str=None, start_date_time: str=None, stop_date_time: str=None, update_date_time: str=None, observing_system_components: List[Reference]=None, targets: List[str]=None, pds4_label_url: str=None, properties: Dict[str, object]=None):  # noqa: E501
         """Product - a model defined in Swagger
 
         :param id: The id of this Product.  # noqa: E501
@@ -26,6 +26,12 @@ class Product(Model):
         :type title: str
         :param description: The description of this Product.  # noqa: E501
         :type description: str
+        :param start_date_time: The start_date_time of this Product.  # noqa: E501
+        :type start_date_time: str
+        :param stop_date_time: The stop_date_time of this Product.  # noqa: E501
+        :type stop_date_time: str
+        :param update_date_time: The update_date_time of this Product.  # noqa: E501
+        :type update_date_time: str
         :param observing_system_components: The observing_system_components of this Product.  # noqa: E501
         :type observing_system_components: List[Reference]
         :param targets: The targets of this Product.  # noqa: E501
@@ -40,6 +46,9 @@ class Product(Model):
             'type': str,
             'title': str,
             'description': str,
+            'start_date_time': str,
+            'stop_date_time': str,
+            'update_date_time': str,
             'observing_system_components': List[Reference],
             'targets': List[str],
             'pds4_label_url': str,
@@ -51,6 +60,9 @@ class Product(Model):
             'type': 'type',
             'title': 'title',
             'description': 'description',
+            'start_date_time': 'start_date_time',
+            'stop_date_time': 'stop_date_time',
+            'update_date_time': 'update_date_time',
             'observing_system_components': 'observing_system_components',
             'targets': 'targets',
             'pds4_label_url': 'pds4_label_url',
@@ -60,6 +72,9 @@ class Product(Model):
         self._type = type
         self._title = title
         self._description = description
+        self._start_date_time = start_date_time
+        self._stop_date_time = stop_date_time
+        self._update_date_time = update_date_time
         self._observing_system_components = observing_system_components
         self._targets = targets
         self._pds4_label_url = pds4_label_url
@@ -163,6 +178,77 @@ class Product(Model):
         """
 
         self._description = description
+
+    @property
+    def start_date_time(self) -> str:
+        """Gets the start_date_time of this Product.
+
+        start date time of the observations in ISO8601  # noqa: E501
+
+        :return: The start_date_time of this Product.
+        :rtype: str
+        """
+        return self._start_date_time
+
+    @start_date_time.setter
+    def start_date_time(self, start_date_time: str):
+        """Sets the start_date_time of this Product.
+
+        start date time of the observations in ISO8601  # noqa: E501
+
+        :param start_date_time: The start_date_time of this Product.
+        :type start_date_time: str
+        """
+
+        self._start_date_time = start_date_time
+
+    @property
+    def stop_date_time(self) -> str:
+        """Gets the stop_date_time of this Product.
+
+        stop date time of the observations in ISO8601  # noqa: E501
+
+        :return: The stop_date_time of this Product.
+        :rtype: str
+        """
+        return self._stop_date_time
+
+    @stop_date_time.setter
+    def stop_date_time(self, stop_date_time: str):
+        """Sets the stop_date_time of this Product.
+
+        stop date time of the observations in ISO8601  # noqa: E501
+
+        :param stop_date_time: The stop_date_time of this Product.
+        :type stop_date_time: str
+        """
+
+        self._stop_date_time = stop_date_time
+
+    @property
+    def update_date_time(self) -> str:
+        """Gets the update_date_time of this Product.
+
+        update date time of the observationin ISO8601  # noqa: E501
+
+        :return: The update_date_time of this Product.
+        :rtype: str
+        """
+        return self._update_date_time
+
+    @update_date_time.setter
+    def update_date_time(self, update_date_time: str):
+        """Sets the update_date_time of this Product.
+
+        update date time of the observationin ISO8601  # noqa: E501
+
+        :param update_date_time: The update_date_time of this Product.
+        :type update_date_time: str
+        """
+        if update_date_time is None:
+            raise ValueError("Invalid value for `update_date_time`, must not be `None`")  # noqa: E501
+
+        self._update_date_time = update_date_time
 
     @property
     def observing_system_components(self) -> List[Reference]:
