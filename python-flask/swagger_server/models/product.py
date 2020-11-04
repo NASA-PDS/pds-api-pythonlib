@@ -15,7 +15,7 @@ class Product(Model):
 
     Do not edit the class manually.
     """
-    def __init__(self, id: str=None, type: str=None, title: str=None, description: str=None, start_date_time: str=None, stop_date_time: str=None, update_date_time: str=None, observing_system_components: List[Reference]=None, targets: List[str]=None, pds4_label_url: str=None, properties: Dict[str, object]=None):  # noqa: E501
+    def __init__(self, id: str=None, type: str=None, title: str=None, description: str=None, start_date_time: str=None, stop_date_time: str=None, update_date_time: str=None, observing_system_components: List[Reference]=None, targets: List[Reference]=None, pds4_label_url: str=None, properties: Dict[str, object]=None):  # noqa: E501
         """Product - a model defined in Swagger
 
         :param id: The id of this Product.  # noqa: E501
@@ -35,7 +35,7 @@ class Product(Model):
         :param observing_system_components: The observing_system_components of this Product.  # noqa: E501
         :type observing_system_components: List[Reference]
         :param targets: The targets of this Product.  # noqa: E501
-        :type targets: List[str]
+        :type targets: List[Reference]
         :param pds4_label_url: The pds4_label_url of this Product.  # noqa: E501
         :type pds4_label_url: str
         :param properties: The properties of this Product.  # noqa: E501
@@ -50,7 +50,7 @@ class Product(Model):
             'stop_date_time': str,
             'update_date_time': str,
             'observing_system_components': List[Reference],
-            'targets': List[str],
+            'targets': List[Reference],
             'pds4_label_url': str,
             'properties': Dict[str, object]
         }
@@ -274,24 +274,24 @@ class Product(Model):
         self._observing_system_components = observing_system_components
 
     @property
-    def targets(self) -> List[str]:
+    def targets(self) -> List[Reference]:
         """Gets the targets of this Product.
 
         identifier lidvid of the target of or feature of interest the observation (for concept see https://en.wikipedia.org/wiki/Observations_and_Measurements)  # noqa: E501
 
         :return: The targets of this Product.
-        :rtype: List[str]
+        :rtype: List[Reference]
         """
         return self._targets
 
     @targets.setter
-    def targets(self, targets: List[str]):
+    def targets(self, targets: List[Reference]):
         """Sets the targets of this Product.
 
         identifier lidvid of the target of or feature of interest the observation (for concept see https://en.wikipedia.org/wiki/Observations_and_Measurements)  # noqa: E501
 
         :param targets: The targets of this Product.
-        :type targets: List[str]
+        :type targets: List[Reference]
         """
 
         self._targets = targets

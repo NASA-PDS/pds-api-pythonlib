@@ -360,8 +360,8 @@ components:
           title: title
           start_date_time: start_date_time
           targets:
-          - targets
-          - targets
+          - null
+          - null
           update_date_time: update_date_time
           properties:
             key: {}
@@ -382,8 +382,8 @@ components:
           title: title
           start_date_time: start_date_time
           targets:
-          - targets
-          - targets
+          - null
+          - null
           update_date_time: update_date_time
           properties:
             key: {}
@@ -443,7 +443,7 @@ components:
           description: identifier lidvid of the target of or feature of interest the
             observation (for concept see https://en.wikipedia.org/wiki/Observations_and_Measurements)
           items:
-            type: string
+            $ref: '#/components/schemas/reference'
         pds4_label_url:
           type: string
         properties:
@@ -467,8 +467,8 @@ components:
         title: title
         start_date_time: start_date_time
         targets:
-        - targets
-        - targets
+        - null
+        - null
         update_date_time: update_date_time
         properties:
           key: {}
