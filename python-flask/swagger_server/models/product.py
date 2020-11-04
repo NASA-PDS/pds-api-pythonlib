@@ -16,13 +16,13 @@ class Product(Model):
 
     Do not edit the class manually.
     """
-    def __init__(self, id: str=None, type: str=None, title: str=None, description: str=None, start_date_time: str=None, stop_date_time: str=None, observing_system_components: List[Reference]=None, targets: List[Reference]=None, metadata: Metadata=None, properties: Dict[str, object]=None):  # noqa: E501
+    def __init__(self, id: str=None, _class: str=None, title: str=None, description: str=None, start_date_time: str=None, stop_date_time: str=None, observing_system_components: List[Reference]=None, targets: List[Reference]=None, metadata: Metadata=None, properties: Dict[str, object]=None):  # noqa: E501
         """Product - a model defined in Swagger
 
         :param id: The id of this Product.  # noqa: E501
         :type id: str
-        :param type: The type of this Product.  # noqa: E501
-        :type type: str
+        :param _class: The _class of this Product.  # noqa: E501
+        :type _class: str
         :param title: The title of this Product.  # noqa: E501
         :type title: str
         :param description: The description of this Product.  # noqa: E501
@@ -42,7 +42,7 @@ class Product(Model):
         """
         self.swagger_types = {
             'id': str,
-            'type': str,
+            '_class': str,
             'title': str,
             'description': str,
             'start_date_time': str,
@@ -55,7 +55,7 @@ class Product(Model):
 
         self.attribute_map = {
             'id': 'id',
-            'type': 'type',
+            '_class': 'class',
             'title': 'title',
             'description': 'description',
             'start_date_time': 'start_date_time',
@@ -66,7 +66,7 @@ class Product(Model):
             'properties': 'properties'
         }
         self._id = id
-        self._type = type
+        self.__class = _class
         self._title = title
         self._description = description
         self._start_date_time = start_date_time
@@ -113,25 +113,25 @@ class Product(Model):
         self._id = id
 
     @property
-    def type(self) -> str:
-        """Gets the type of this Product.
+    def _class(self) -> str:
+        """Gets the _class of this Product.
 
 
-        :return: The type of this Product.
+        :return: The _class of this Product.
         :rtype: str
         """
-        return self._type
+        return self.__class
 
-    @type.setter
-    def type(self, type: str):
-        """Sets the type of this Product.
+    @_class.setter
+    def _class(self, _class: str):
+        """Sets the _class of this Product.
 
 
-        :param type: The type of this Product.
-        :type type: str
+        :param _class: The _class of this Product.
+        :type _class: str
         """
 
-        self._type = type
+        self.__class = _class
 
     @property
     def title(self) -> str:
@@ -285,6 +285,8 @@ class Product(Model):
         :param metadata: The metadata of this Product.
         :type metadata: Metadata
         """
+        if metadata is None:
+            raise ValueError("Invalid value for `metadata`, must not be `None`")  # noqa: E501
 
         self._metadata = metadata
 
