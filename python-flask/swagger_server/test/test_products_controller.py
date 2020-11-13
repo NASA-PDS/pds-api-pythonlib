@@ -18,8 +18,8 @@ class TestProductsController(BaseTestCase):
 
         search across all PDS data products, including bundles, collections, documentation, and observational products,
         """
-        query_string = [('start', 56),
-                        ('limit', 56),
+        query_string = [('start', 0),
+                        ('limit', 20),
                         ('q', 'q_example'),
                         ('fields', 'fields_example'),
                         ('sort', 'sort_example')]
