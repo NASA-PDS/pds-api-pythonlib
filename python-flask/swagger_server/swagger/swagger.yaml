@@ -77,7 +77,7 @@ paths:
         explode: true
         schema:
           type: integer
-          default: 20
+          default: 100
       - name: q
         in: query
         description: search query
@@ -160,6 +160,7 @@ paths:
         explode: true
         schema:
           type: integer
+          default: 0
       - name: limit
         in: query
         description: maximum number of matching results returned, for pagination
@@ -168,6 +169,7 @@ paths:
         explode: true
         schema:
           type: integer
+          default: 100
       - name: q
         in: query
         description: search query
