@@ -6,7 +6,7 @@ from swagger_server.models.products import Products  # noqa: E501
 from swagger_server import util
 
 
-def get_collection(start=None, limit=None, q=None, fields=None, sort=None):  # noqa: E501
+def get_collection(start=None, limit=None, q=None, fields=None, sort=None, only_summary=None):  # noqa: E501
     """request PDS collections
 
      # noqa: E501
@@ -21,6 +21,8 @@ def get_collection(start=None, limit=None, q=None, fields=None, sort=None):  # n
     :type fields: List[str]
     :param sort: sort results, syntax asc(field0),desc(field1)
     :type sort: List[str]
+    :param only_summary: only return the summary, useful to get the list of available properties
+    :type only_summary: bool
 
     :rtype: Products
     """

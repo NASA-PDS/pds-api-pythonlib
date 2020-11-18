@@ -22,7 +22,8 @@ class TestCollectionsController(BaseTestCase):
                         ('limit', 100),
                         ('q', 'q_example'),
                         ('fields', 'fields_example'),
-                        ('sort', 'sort_example')]
+                        ('sort', 'sort_example'),
+                        ('only_summary', false)]
         response = self.client.open(
             '/PDS_APIs/pds_federated_api/0.1.0/collections',
             method='GET',

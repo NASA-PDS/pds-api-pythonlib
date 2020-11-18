@@ -14,7 +14,7 @@ class Summary(Model):
 
     Do not edit the class manually.
     """
-    def __init__(self, q: str=None, start: int=None, limit: int=None, sort: List[str]=None):  # noqa: E501
+    def __init__(self, q: str=None, start: int=None, limit: int=None, sort: List[str]=None, properties: List[str]=None):  # noqa: E501
         """Summary - a model defined in Swagger
 
         :param q: The q of this Summary.  # noqa: E501
@@ -25,24 +25,29 @@ class Summary(Model):
         :type limit: int
         :param sort: The sort of this Summary.  # noqa: E501
         :type sort: List[str]
+        :param properties: The properties of this Summary.  # noqa: E501
+        :type properties: List[str]
         """
         self.swagger_types = {
             'q': str,
             'start': int,
             'limit': int,
-            'sort': List[str]
+            'sort': List[str],
+            'properties': List[str]
         }
 
         self.attribute_map = {
             'q': 'q',
             'start': 'start',
             'limit': 'limit',
-            'sort': 'sort'
+            'sort': 'sort',
+            'properties': 'properties'
         }
         self._q = q
         self._start = start
         self._limit = limit
         self._sort = sort
+        self._properties = properties
 
     @classmethod
     def from_dict(cls, dikt) -> 'Summary':
@@ -138,3 +143,24 @@ class Summary(Model):
         """
 
         self._sort = sort
+
+    @property
+    def properties(self) -> List[str]:
+        """Gets the properties of this Summary.
+
+
+        :return: The properties of this Summary.
+        :rtype: List[str]
+        """
+        return self._properties
+
+    @properties.setter
+    def properties(self, properties: List[str]):
+        """Sets the properties of this Summary.
+
+
+        :param properties: The properties of this Summary.
+        :type properties: List[str]
+        """
+
+        self._properties = properties
