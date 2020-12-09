@@ -294,6 +294,7 @@ class Product(Model):
     def properties(self) -> Dict[str, object]:
         """Gets the properties of this Product.
 
+        properties extracted from pds4 model, syntax for property name is <namespace>:<property>[/<namespace>:<property>]*  # noqa: E501
 
         :return: The properties of this Product.
         :rtype: Dict[str, object]
@@ -304,6 +305,7 @@ class Product(Model):
     def properties(self, properties: Dict[str, object]):
         """Sets the properties of this Product.
 
+        properties extracted from pds4 model, syntax for property name is <namespace>:<property>[/<namespace>:<property>]*  # noqa: E501
 
         :param properties: The properties of this Product.
         :type properties: Dict[str, object]

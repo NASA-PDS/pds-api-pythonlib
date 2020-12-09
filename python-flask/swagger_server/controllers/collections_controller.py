@@ -15,7 +15,7 @@ def get_collection(start=None, limit=None, q=None, fields=None, sort=None, only_
     :type start: int
     :param limit: maximum number of matching results returned, for pagination
     :type limit: int
-    :param q: search query
+    :param q: search query, complex query uses eq,ne,gt,ge,lt,le,(,),not,and,or. Properties are named as in &#x27;properties&#x27; attributes, literals are strings between \\\&quot; or numbers.
     :type q: str
     :param fields: returned fields, syntax field0,field1
     :type fields: List[str]
