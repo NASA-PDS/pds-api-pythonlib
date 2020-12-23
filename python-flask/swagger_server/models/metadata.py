@@ -14,7 +14,7 @@ class Metadata(Model):
 
     Do not edit the class manually.
     """
-    def __init__(self, creation_date_time: str=None, update_date_time: str=None, version: str=None, label_url: str=None, label: str=None):  # noqa: E501
+    def __init__(self, creation_date_time: str=None, update_date_time: str=None, version: str=None, label_url: str=None, label_xml: str=None):  # noqa: E501
         """Metadata - a model defined in Swagger
 
         :param creation_date_time: The creation_date_time of this Metadata.  # noqa: E501
@@ -25,15 +25,15 @@ class Metadata(Model):
         :type version: str
         :param label_url: The label_url of this Metadata.  # noqa: E501
         :type label_url: str
-        :param label: The label of this Metadata.  # noqa: E501
-        :type label: str
+        :param label_xml: The label_xml of this Metadata.  # noqa: E501
+        :type label_xml: str
         """
         self.swagger_types = {
             'creation_date_time': str,
             'update_date_time': str,
             'version': str,
             'label_url': str,
-            'label': str
+            'label_xml': str
         }
 
         self.attribute_map = {
@@ -41,13 +41,13 @@ class Metadata(Model):
             'update_date_time': 'update_date_time',
             'version': 'version',
             'label_url': 'label_url',
-            'label': 'label'
+            'label_xml': 'label_xml'
         }
         self._creation_date_time = creation_date_time
         self._update_date_time = update_date_time
         self._version = version
         self._label_url = label_url
-        self._label = label
+        self._label_xml = label_xml
 
     @classmethod
     def from_dict(cls, dikt) -> 'Metadata':
@@ -147,22 +147,22 @@ class Metadata(Model):
         self._label_url = label_url
 
     @property
-    def label(self) -> str:
-        """Gets the label of this Metadata.
+    def label_xml(self) -> str:
+        """Gets the label_xml of this Metadata.
 
 
-        :return: The label of this Metadata.
+        :return: The label_xml of this Metadata.
         :rtype: str
         """
-        return self._label
+        return self._label_xml
 
-    @label.setter
-    def label(self, label: str):
-        """Sets the label of this Metadata.
+    @label_xml.setter
+    def label_xml(self, label_xml: str):
+        """Sets the label_xml of this Metadata.
 
 
-        :param label: The label of this Metadata.
-        :type label: str
+        :param label_xml: The label_xml of this Metadata.
+        :type label_xml: str
         """
 
-        self._label = label
+        self._label_xml = label_xml
