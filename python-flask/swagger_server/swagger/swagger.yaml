@@ -389,6 +389,7 @@ components:
             title: title
             type: type
           metadata:
+            label: label
             creation_date_time: creation_date_time
             version: version
             update_date_time: update_date_time
@@ -414,6 +415,7 @@ components:
             title: title
             type: type
           metadata:
+            label: label
             creation_date_time: creation_date_time
             version: version
             update_date_time: update_date_time
@@ -508,6 +510,7 @@ components:
           title: title
           type: type
         metadata:
+          label: label
           creation_date_time: creation_date_time
           version: version
           update_date_time: update_date_time
@@ -562,7 +565,10 @@ components:
           type: string
         label_url:
           type: string
+        label:
+          type: string
       example:
+        label: label
         creation_date_time: creation_date_time
         version: version
         update_date_time: update_date_time
