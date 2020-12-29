@@ -16,7 +16,7 @@ class Product(Model):
 
     Do not edit the class manually.
     """
-    def __init__(self, id: str=None, type: str=None, title: str=None, description: str=None, start_date_time: str=None, stop_date_time: str=None, observing_system_components: List[Reference]=None, targets: List[Reference]=None, metadata: Metadata=None, properties: Dict[str, object]=None):  # noqa: E501
+    def __init__(self, id: str=None, type: str=None, title: str=None, description: str=None, start_date_time: str=None, stop_date_time: str=None, investigations: List[Reference]=None, observing_system_components: List[Reference]=None, targets: List[Reference]=None, metadata: Metadata=None, properties: Dict[str, object]=None):  # noqa: E501
         """Product - a model defined in Swagger
 
         :param id: The id of this Product.  # noqa: E501
@@ -31,6 +31,8 @@ class Product(Model):
         :type start_date_time: str
         :param stop_date_time: The stop_date_time of this Product.  # noqa: E501
         :type stop_date_time: str
+        :param investigations: The investigations of this Product.  # noqa: E501
+        :type investigations: List[Reference]
         :param observing_system_components: The observing_system_components of this Product.  # noqa: E501
         :type observing_system_components: List[Reference]
         :param targets: The targets of this Product.  # noqa: E501
@@ -47,6 +49,7 @@ class Product(Model):
             'description': str,
             'start_date_time': str,
             'stop_date_time': str,
+            'investigations': List[Reference],
             'observing_system_components': List[Reference],
             'targets': List[Reference],
             'metadata': Metadata,
@@ -60,6 +63,7 @@ class Product(Model):
             'description': 'description',
             'start_date_time': 'start_date_time',
             'stop_date_time': 'stop_date_time',
+            'investigations': 'investigations',
             'observing_system_components': 'observing_system_components',
             'targets': 'targets',
             'metadata': 'metadata',
@@ -71,6 +75,7 @@ class Product(Model):
         self._description = description
         self._start_date_time = start_date_time
         self._stop_date_time = stop_date_time
+        self._investigations = investigations
         self._observing_system_components = observing_system_components
         self._targets = targets
         self._metadata = metadata
@@ -222,10 +227,33 @@ class Product(Model):
         self._stop_date_time = stop_date_time
 
     @property
+    def investigations(self) -> List[Reference]:
+        """Gets the investigations of this Product.
+
+        list of missions or observing campaigns which produced the data  # noqa: E501
+
+        :return: The investigations of this Product.
+        :rtype: List[Reference]
+        """
+        return self._investigations
+
+    @investigations.setter
+    def investigations(self, investigations: List[Reference]):
+        """Sets the investigations of this Product.
+
+        list of missions or observing campaigns which produced the data  # noqa: E501
+
+        :param investigations: The investigations of this Product.
+        :type investigations: List[Reference]
+        """
+
+        self._investigations = investigations
+
+    @property
     def observing_system_components(self) -> List[Reference]:
         """Gets the observing_system_components of this Product.
 
-        list of instruments or procedures generating the data (for concept see https://en.wikipedia.org/wiki/Observations_and_Measurements)  # noqa: E501
+        list of instruments or platforms generating the data  # noqa: E501
 
         :return: The observing_system_components of this Product.
         :rtype: List[Reference]
@@ -236,7 +264,7 @@ class Product(Model):
     def observing_system_components(self, observing_system_components: List[Reference]):
         """Sets the observing_system_components of this Product.
 
-        list of instruments or procedures generating the data (for concept see https://en.wikipedia.org/wiki/Observations_and_Measurements)  # noqa: E501
+        list of instruments or platforms generating the data  # noqa: E501
 
         :param observing_system_components: The observing_system_components of this Product.
         :type observing_system_components: List[Reference]
@@ -248,7 +276,7 @@ class Product(Model):
     def targets(self) -> List[Reference]:
         """Gets the targets of this Product.
 
-        identifier lidvid of the target of or feature of interest the observation (for concept see https://en.wikipedia.org/wiki/Observations_and_Measurements)  # noqa: E501
+        list of targets or feature of interest the observation.  # noqa: E501
 
         :return: The targets of this Product.
         :rtype: List[Reference]
@@ -259,7 +287,7 @@ class Product(Model):
     def targets(self, targets: List[Reference]):
         """Sets the targets of this Product.
 
-        identifier lidvid of the target of or feature of interest the observation (for concept see https://en.wikipedia.org/wiki/Observations_and_Measurements)  # noqa: E501
+        list of targets or feature of interest the observation.  # noqa: E501
 
         :param targets: The targets of this Product.
         :type targets: List[Reference]

@@ -155,6 +155,9 @@ paths:
             application/xml:
               schema:
                 type: object
+            application/pds4+xml:
+              schema:
+                type: object
         "404":
           description: lidvid not found
         "500":
@@ -380,14 +383,8 @@ components:
         data:
         - stop_date_time: stop_date_time
           observing_system_components:
-          - ref: ref
-            description: description
-            title: title
-            type: type
-          - ref: ref
-            description: description
-            title: title
-            type: type
+          - null
+          - null
           metadata:
             label_xml: label_xml
             creation_date_time: creation_date_time
@@ -395,6 +392,15 @@ components:
             update_date_time: update_date_time
             label_url: label_url
           description: description
+          investigations:
+          - ref: ref
+            description: description
+            title: title
+            type: type
+          - ref: ref
+            description: description
+            title: title
+            type: type
           id: id
           type: type
           title: title
@@ -406,14 +412,8 @@ components:
             key: {}
         - stop_date_time: stop_date_time
           observing_system_components:
-          - ref: ref
-            description: description
-            title: title
-            type: type
-          - ref: ref
-            description: description
-            title: title
-            type: type
+          - null
+          - null
           metadata:
             label_xml: label_xml
             creation_date_time: creation_date_time
@@ -421,6 +421,15 @@ components:
             update_date_time: update_date_time
             label_url: label_url
           description: description
+          investigations:
+          - ref: ref
+            description: description
+            title: title
+            type: type
+          - ref: ref
+            description: description
+            title: title
+            type: type
           id: id
           type: type
           title: title
@@ -478,16 +487,20 @@ components:
         stop_date_time:
           type: string
           description: stop date time of the observations in ISO8601
+        investigations:
+          type: array
+          description: list of missions or observing campaigns which produced the
+            data
+          items:
+            $ref: '#/components/schemas/reference'
         observing_system_components:
           type: array
-          description: list of instruments or procedures generating the data (for
-            concept see https://en.wikipedia.org/wiki/Observations_and_Measurements)
+          description: list of instruments or platforms generating the data
           items:
             $ref: '#/components/schemas/reference'
         targets:
           type: array
-          description: identifier lidvid of the target of or feature of interest the
-            observation (for concept see https://en.wikipedia.org/wiki/Observations_and_Measurements)
+          description: list of targets or feature of interest the observation.
           items:
             $ref: '#/components/schemas/reference'
         metadata:
@@ -501,14 +514,8 @@ components:
       example:
         stop_date_time: stop_date_time
         observing_system_components:
-        - ref: ref
-          description: description
-          title: title
-          type: type
-        - ref: ref
-          description: description
-          title: title
-          type: type
+        - null
+        - null
         metadata:
           label_xml: label_xml
           creation_date_time: creation_date_time
@@ -516,6 +523,15 @@ components:
           update_date_time: update_date_time
           label_url: label_url
         description: description
+        investigations:
+        - ref: ref
+          description: description
+          title: title
+          type: type
+        - ref: ref
+          description: description
+          title: title
+          type: type
         id: id
         type: type
         title: title
