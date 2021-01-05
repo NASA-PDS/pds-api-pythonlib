@@ -192,7 +192,7 @@ paths:
         in: query
         description: search query, complex query uses eq,ne,gt,ge,lt,le,(,),not,and,or.
           Properties are named as in 'properties' attributes, literals are strings
-          between \" or numbers.
+          between " or numbers. Detailed query specification is available at https://bit.ly/393i1af
         required: false
         style: form
         explode: true
