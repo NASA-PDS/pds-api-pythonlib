@@ -479,7 +479,7 @@ components:
         - properties
         - properties
       xml:
-        namespace: http://pds.nasa.gov/pds_api
+        namespace: http://pds.nasa.gov/api
         prefix: pds_api
     product:
       required:
