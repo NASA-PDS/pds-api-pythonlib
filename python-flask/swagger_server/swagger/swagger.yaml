@@ -456,16 +456,31 @@ components:
       properties:
         q:
           type: string
+          xml:
+            namespace: http://pds.nasa.gov/api
+            prefix: pds_api
         start:
           type: integer
+          xml:
+            namespace: http://pds.nasa.gov/api
+            prefix: pds_api
         limit:
           type: integer
+          xml:
+            namespace: http://pds.nasa.gov/api
+            prefix: pds_api
         sort:
           type: array
+          xml:
+            namespace: http://pds.nasa.gov/api
+            prefix: pds_api
           items:
             type: string
         properties:
           type: array
+          xml:
+            namespace: http://pds.nasa.gov/api
+            prefix: pds_api
           items:
             type: string
       example:
