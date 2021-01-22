@@ -14,7 +14,7 @@ class Metadata(Model):
 
     Do not edit the class manually.
     """
-    def __init__(self, creation_date_time: str=None, update_date_time: str=None, version: str=None, label_url: str=None, label_xml: str=None):  # noqa: E501
+    def __init__(self, creation_date_time: str=None, update_date_time: str=None, version: str=None, label_url: str=None):  # noqa: E501
         """Metadata - a model defined in Swagger
 
         :param creation_date_time: The creation_date_time of this Metadata.  # noqa: E501
@@ -25,29 +25,24 @@ class Metadata(Model):
         :type version: str
         :param label_url: The label_url of this Metadata.  # noqa: E501
         :type label_url: str
-        :param label_xml: The label_xml of this Metadata.  # noqa: E501
-        :type label_xml: str
         """
         self.swagger_types = {
             'creation_date_time': str,
             'update_date_time': str,
             'version': str,
-            'label_url': str,
-            'label_xml': str
+            'label_url': str
         }
 
         self.attribute_map = {
             'creation_date_time': 'creation_date_time',
             'update_date_time': 'update_date_time',
             'version': 'version',
-            'label_url': 'label_url',
-            'label_xml': 'label_xml'
+            'label_url': 'label_url'
         }
         self._creation_date_time = creation_date_time
         self._update_date_time = update_date_time
         self._version = version
         self._label_url = label_url
-        self._label_xml = label_xml
 
     @classmethod
     def from_dict(cls, dikt) -> 'Metadata':
@@ -145,24 +140,3 @@ class Metadata(Model):
             raise ValueError("Invalid value for `label_url`, must not be `None`")  # noqa: E501
 
         self._label_url = label_url
-
-    @property
-    def label_xml(self) -> str:
-        """Gets the label_xml of this Metadata.
-
-
-        :return: The label_xml of this Metadata.
-        :rtype: str
-        """
-        return self._label_xml
-
-    @label_xml.setter
-    def label_xml(self, label_xml: str):
-        """Sets the label_xml of this Metadata.
-
-
-        :param label_xml: The label_xml of this Metadata.
-        :type label_xml: str
-        """
-
-        self._label_xml = label_xml
