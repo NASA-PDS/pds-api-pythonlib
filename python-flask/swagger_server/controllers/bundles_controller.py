@@ -7,8 +7,8 @@ from swagger_server.models.products import Products  # noqa: E501
 from swagger_server import util
 
 
-def collections_by_lidvid(lidvid):  # noqa: E501
-    """collections URN resolver for lidvid
+def bundle_by_lidvid(lidvid):  # noqa: E501
+    """bundles URN resolver for lidvid
 
      # noqa: E501
 
@@ -20,8 +20,8 @@ def collections_by_lidvid(lidvid):  # noqa: E501
     return 'do some magic!'
 
 
-def get_collection(start=None, limit=None, q=None, fields=None, sort=None, only_summary=None):  # noqa: E501
-    """request PDS collections
+def get_bundles(start=None, limit=None, q=None, fields=None, sort=None, only_summary=None):  # noqa: E501
+    """request PDS bundles
 
      # noqa: E501
 
