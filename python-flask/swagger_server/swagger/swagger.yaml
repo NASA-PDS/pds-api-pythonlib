@@ -434,14 +434,24 @@ paths:
       summary: get collections belonging to a given bundle
       operationId: collections_of_a_bundle
       parameters:
-      - name: lidvid
-        in: path
-        description: lidvid (urn)
-        required: true
-        style: simple
-        explode: false
+      - name: start
+        in: query
+        description: offset in matching result list, for pagination
+        required: false
+        style: form
+        explode: true
         schema:
-          type: string
+          type: integer
+          default: 0
+      - name: limit
+        in: query
+        description: maximum number of matching results returned, for pagination
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: integer
+          default: 100
       responses:
         "200":
           description: Successful request
