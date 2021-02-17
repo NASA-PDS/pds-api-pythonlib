@@ -20,7 +20,7 @@ class TestBundlesCollectionsController(BaseTestCase):
         query_string = [('start', 0),
                         ('limit', 100)]
         response = self.client.open(
-            '/PDS_APIs/pds_federated_api/0.1.0/bundles/{lidvid}/collections',
+            '/PDS_APIs/pds_federated_api/0.1.0/bundles/{lidvid}/collections'.format(lidvid='lidvid_example'),
             method='GET',
             query_string=query_string)
         self.assert200(response,
