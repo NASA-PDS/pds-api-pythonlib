@@ -427,6 +427,39 @@ paths:
         "500":
           description: Internal server error
       x-openapi-router-controller: swagger_server.controllers.bundles_controller
+  /bundles/{lidvid}/collections:
+    get:
+      tags:
+      - bundle's collections
+      summary: get collections belonging to a given bundle
+      operationId: collections_of_a_bundle
+      parameters:
+      - name: lidvid
+        in: path
+        description: lidvid (urn)
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Successful request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/products'
+            application/xml:
+              schema:
+                type: object
+            application/pds4+xml:
+              schema:
+                type: object
+        "404":
+          description: lidvid not found
+        "500":
+          description: Internal server error
+      x-openapi-router-controller: swagger_server.controllers.bundle's_collections_controller
   /routes:
     get:
       tags:
