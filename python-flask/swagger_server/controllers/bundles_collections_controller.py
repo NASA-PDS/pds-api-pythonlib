@@ -5,7 +5,7 @@ from swagger_server.models.products import Products  # noqa: E501
 from swagger_server import util
 
 
-def collections_of_a_bundle(lidvid, start=None, limit=None):  # noqa: E501
+def collections_of_a_bundle(lidvid, start=None, limit=None, fields=None, sort=None, only_summary=None):  # noqa: E501
     """get collections belonging to a given bundle
 
      # noqa: E501
@@ -16,6 +16,12 @@ def collections_of_a_bundle(lidvid, start=None, limit=None):  # noqa: E501
     :type start: int
     :param limit: maximum number of matching results returned, for pagination
     :type limit: int
+    :param fields: returned fields, syntax field0,field1
+    :type fields: List[str]
+    :param sort: sort results, syntax asc(field0),desc(field1)
+    :type sort: List[str]
+    :param only_summary: only return the summary, useful to get the list of available properties
+    :type only_summary: bool
 
     :rtype: Products
     """

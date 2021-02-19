@@ -460,6 +460,36 @@ paths:
         schema:
           type: integer
           default: 100
+      - name: fields
+        in: query
+        description: returned fields, syntax field0,field1
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: array
+          items:
+            type: string
+      - name: sort
+        in: query
+        description: sort results, syntax asc(field0),desc(field1)
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: array
+          items:
+            type: string
+      - name: only_summary
+        in: query
+        description: only return the summary, useful to get the list of available
+          properties
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: boolean
+          default: false
       responses:
         "200":
           description: Successful request
