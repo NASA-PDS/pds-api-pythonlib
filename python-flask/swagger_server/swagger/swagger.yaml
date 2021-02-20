@@ -298,6 +298,87 @@ paths:
         "500":
           description: Internal server error
       x-openapi-router-controller: swagger_server.controllers.collections_controller
+  /collections/{lidvid}/products:
+    get:
+      tags:
+      - collection's products
+      summary: get producs belonging to a given collection
+      operationId: products_of_a_collection
+      parameters:
+      - name: lidvid
+        in: path
+        description: lidvid (urn)
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: start
+        in: query
+        description: offset in matching result list, for pagination
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: integer
+          default: 0
+      - name: limit
+        in: query
+        description: maximum number of matching results returned, for pagination
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: integer
+          default: 100
+      - name: fields
+        in: query
+        description: returned fields, syntax field0,field1
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: array
+          items:
+            type: string
+      - name: sort
+        in: query
+        description: sort results, syntax asc(field0),desc(field1)
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: array
+          items:
+            type: string
+      - name: only_summary
+        in: query
+        description: only return the summary, useful to get the list of available
+          properties
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: boolean
+          default: false
+      responses:
+        "200":
+          description: Successful request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/products'
+            application/xml:
+              schema:
+                type: object
+            application/pds4+xml:
+              schema:
+                type: object
+        "404":
+          description: lidvid not found
+        "500":
+          description: Internal server error
+      x-openapi-router-controller: swagger_server.controllers.collection's_products_controller
   /bundles:
     get:
       tags:
