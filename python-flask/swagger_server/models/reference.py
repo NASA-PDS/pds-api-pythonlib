@@ -14,13 +14,15 @@ class Reference(Model):
 
     Do not edit the class manually.
     """
-    def __init__(self, title: str=None, ref: str=None, type: str=None, description: str=None):  # noqa: E501
+    def __init__(self, title: str=None, id: str=None, href: str=None, type: str=None, description: str=None):  # noqa: E501
         """Reference - a model defined in Swagger
 
         :param title: The title of this Reference.  # noqa: E501
         :type title: str
-        :param ref: The ref of this Reference.  # noqa: E501
-        :type ref: str
+        :param id: The id of this Reference.  # noqa: E501
+        :type id: str
+        :param href: The href of this Reference.  # noqa: E501
+        :type href: str
         :param type: The type of this Reference.  # noqa: E501
         :type type: str
         :param description: The description of this Reference.  # noqa: E501
@@ -28,19 +30,22 @@ class Reference(Model):
         """
         self.swagger_types = {
             'title': str,
-            'ref': str,
+            'id': str,
+            'href': str,
             'type': str,
             'description': str
         }
 
         self.attribute_map = {
             'title': 'title',
-            'ref': 'ref',
+            'id': 'id',
+            'href': 'href',
             'type': 'type',
             'description': 'description'
         }
         self._title = title
-        self._ref = ref
+        self._id = id
+        self._href = href
         self._type = type
         self._description = description
 
@@ -79,29 +84,52 @@ class Reference(Model):
         self._title = title
 
     @property
-    def ref(self) -> str:
-        """Gets the ref of this Reference.
+    def id(self) -> str:
+        """Gets the id of this Reference.
 
         external reference, here lidvid urn  # noqa: E501
 
-        :return: The ref of this Reference.
+        :return: The id of this Reference.
         :rtype: str
         """
-        return self._ref
+        return self._id
 
-    @ref.setter
-    def ref(self, ref: str):
-        """Sets the ref of this Reference.
+    @id.setter
+    def id(self, id: str):
+        """Sets the id of this Reference.
 
         external reference, here lidvid urn  # noqa: E501
 
-        :param ref: The ref of this Reference.
-        :type ref: str
+        :param id: The id of this Reference.
+        :type id: str
         """
-        if ref is None:
-            raise ValueError("Invalid value for `ref`, must not be `None`")  # noqa: E501
+        if id is None:
+            raise ValueError("Invalid value for `id`, must not be `None`")  # noqa: E501
 
-        self._ref = ref
+        self._id = id
+
+    @property
+    def href(self) -> str:
+        """Gets the href of this Reference.
+
+        external reference url of the current reference resolvable by the current API server, http://pds.nasa.gov/api/products/urn:nasa...  # noqa: E501
+
+        :return: The href of this Reference.
+        :rtype: str
+        """
+        return self._href
+
+    @href.setter
+    def href(self, href: str):
+        """Sets the href of this Reference.
+
+        external reference url of the current reference resolvable by the current API server, http://pds.nasa.gov/api/products/urn:nasa...  # noqa: E501
+
+        :param href: The href of this Reference.
+        :type href: str
+        """
+
+        self._href = href
 
     @property
     def type(self) -> str:

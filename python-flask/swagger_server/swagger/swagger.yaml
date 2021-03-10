@@ -728,12 +728,14 @@ components:
             label_url: label_url
           description: description
           investigations:
-          - ref: ref
-            description: description
+          - description: description
+            id: id
+            href: href
             title: title
             type: type
-          - ref: ref
-            description: description
+          - description: description
+            id: id
+            href: href
             title: title
             type: type
           id: id
@@ -756,12 +758,14 @@ components:
             label_url: label_url
           description: description
           investigations:
-          - ref: ref
-            description: description
+          - description: description
+            id: id
+            href: href
             title: title
             type: type
-          - ref: ref
-            description: description
+          - description: description
+            id: id
+            href: href
             title: title
             type: type
           id: id
@@ -875,12 +879,14 @@ components:
           label_url: label_url
         description: description
         investigations:
-        - ref: ref
-          description: description
+        - description: description
+          id: id
+          href: href
           title: title
           type: type
-        - ref: ref
-          description: description
+        - description: description
+          id: id
+          href: href
           title: title
           type: type
         id: id
@@ -894,16 +900,19 @@ components:
           key: {}
     reference:
       required:
-      - name
-      - ref
+      - id
       type: object
       properties:
         title:
           type: string
           description: name to display for the external reference
-        ref:
+        id:
           type: string
           description: external reference, here lidvid urn
+        href:
+          type: string
+          description: external reference url of the current reference resolvable
+            by the current API server, http://pds.nasa.gov/api/products/urn:nasa...
         type:
           type: string
           description: type of the external reference, can be displayed as an icon
@@ -915,8 +924,9 @@ components:
       description: object describing a reference to a different product. TODO The
         properties should be defined by a standard (xlink, json-ld) to be chosen
       example:
-        ref: ref
         description: description
+        id: id
+        href: href
         title: title
         type: type
     metadata:
