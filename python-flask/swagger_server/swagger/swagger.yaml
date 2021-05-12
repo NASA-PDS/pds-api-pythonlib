@@ -57,7 +57,7 @@ paths:
       tags:
       - products
       summary: "search across all PDS data products, including bundles, collections,\
-        \ documentation, and observational products,"
+        \ documentation, context and observational products,"
       operationId: products
       parameters:
       - name: start

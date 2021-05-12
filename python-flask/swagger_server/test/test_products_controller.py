@@ -16,7 +16,7 @@ class TestProductsController(BaseTestCase):
     def test_products(self):
         """Test case for products
 
-        search across all PDS data products, including bundles, collections, documentation, and observational products,
+        search across all PDS data products, including bundles, collections, documentation, context and observational products,
         """
         query_string = [('start', 0),
                         ('limit', 100),

@@ -7,7 +7,7 @@ from swagger_server import util
 
 
 def products(start=None, limit=None, q=None, fields=None, sort=None, only_summary=None):  # noqa: E501
-    """search across all PDS data products, including bundles, collections, documentation, and observational products,
+    """search across all PDS data products, including bundles, collections, documentation, context and observational products,
 
      # noqa: E501
 
