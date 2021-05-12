@@ -24,34 +24,6 @@ tags:
     description: Find out more
     url: http://pds.nasa.gov
 paths:
-  /capabilities:
-    get:
-      tags:
-      - capabilities
-      summary: "capabilities api entry point, list the resources provided by the current\
-        \ API end-point."
-      operationId: capabilities
-      responses:
-        "200":
-          description: Successful request
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/capabilities'
-              example:
-              - action: capabilities
-                version: 0.1
-              - action: collections
-                version: 0.1
-              - action: products
-                version: 0.1
-              - action: routes
-                version: 0.1
-        "404":
-          description: capabilities not available
-        "500":
-          description: Internal server error
-      x-openapi-router-controller: swagger_server.controllers.capabilities_controller
   /products:
     get:
       tags:
@@ -913,111 +885,8 @@ paths:
         "500":
           description: Internal server error
       x-openapi-router-controller: swagger_server.controllers.bundle's_products_controller
-  /routes:
-    get:
-      tags:
-      - routes
-      operationId: all_routes
-      responses:
-        "200":
-          description: Successful request
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/routes'
-      x-openapi-router-controller: swagger_server.controllers.routes_controller
-  /routes/{resource}:
-    get:
-      tags:
-      - routes
-      operationId: routes
-      parameters:
-      - name: resource
-        in: path
-        description: "requested action as a request path, e.g. '/record'"
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
-      - name: version
-        in: query
-        required: false
-        style: form
-        explode: true
-        schema:
-          type: string
-      - name: query
-        in: query
-        description: "query parameter on the action, e.g. lidvid urn for a '/records'\
-          \ action"
-        required: false
-        style: form
-        explode: true
-        schema:
-          type: string
-      responses:
-        "302":
-          description: "Successful request, redirect request"
-      x-openapi-router-controller: swagger_server.controllers.routes_controller
 components:
   schemas:
-    capabilities:
-      type: array
-      example:
-      - action: capabilities
-        version: 0.1
-      - action: collections
-        version: 0.1
-      - action: products
-        version: 0.1
-      - action: routes
-        version: 0.1
-      items:
-        $ref: '#/components/schemas/capability'
-    capability:
-      required:
-      - action
-      - version
-      type: object
-      properties:
-        action:
-          type: string
-        version:
-          type: string
-      example:
-      - action: collections
-        version: 0.1
-    routes:
-      type: array
-      example:
-      - resource: /routes
-        query: '*'
-        url: https://pds.nasa/gov/v1/api
-        version: "0.1"
-      - resource: /products
-        query: urn:nasa:pds:insight_rad:*
-        url: https://pds-geosciences.wustl.edu/v0/api
-        version: "0.2"
-      - resource: /products
-        query: urn:nasa:pds:insight_rad:*
-        url: https://pds-geosciences.wustl.edu/v0.3/api
-        version: "0.3"
-      items:
-        $ref: '#/components/schemas/route'
-    route:
-      required:
-      - query
-      - resource
-      - url
-      type: object
-      properties:
-        resource:
-          type: string
-        query:
-          type: string
-        url:
-          type: string
     products:
       required:
       - summary
