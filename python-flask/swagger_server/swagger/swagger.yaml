@@ -626,7 +626,7 @@ paths:
     get:
       tags:
       - bundles
-      summary: request PDS bundles
+      summary: request all PDS bundles
       operationId: get_bundles
       parameters:
       - name: start
@@ -722,7 +722,7 @@ paths:
     get:
       tags:
       - bundles
-      summary: bundles URN resolver for lidvid
+      summary: "bundle URN resolver for lidvid, get one bundle"
       operationId: bundle_by_lidvid
       parameters:
       - name: lidvid

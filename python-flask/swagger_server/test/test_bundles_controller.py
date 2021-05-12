@@ -17,7 +17,7 @@ class TestBundlesController(BaseTestCase):
     def test_bundle_by_lidvid(self):
         """Test case for bundle_by_lidvid
 
-        bundles URN resolver for lidvid
+        bundle URN resolver for lidvid, get one bundle
         """
         response = self.client.open(
             '/PDS_APIs/pds_federated_api/0.1.0/bundles/{lidvid}'.format(lidvid='lidvid_example'),
@@ -28,7 +28,7 @@ class TestBundlesController(BaseTestCase):
     def test_get_bundles(self):
         """Test case for get_bundles
 
-        request PDS bundles
+        request all PDS bundles
         """
         query_string = [('start', 0),
                         ('limit', 100),

@@ -8,7 +8,7 @@ from swagger_server import util
 
 
 def bundle_by_lidvid(lidvid):  # noqa: E501
-    """bundles URN resolver for lidvid
+    """bundle URN resolver for lidvid, get one bundle
 
      # noqa: E501
 
@@ -21,7 +21,7 @@ def bundle_by_lidvid(lidvid):  # noqa: E501
 
 
 def get_bundles(start=None, limit=None, q=None, fields=None, sort=None, only_summary=None):  # noqa: E501
-    """request PDS bundles
+    """request all PDS bundles
 
      # noqa: E501
 
