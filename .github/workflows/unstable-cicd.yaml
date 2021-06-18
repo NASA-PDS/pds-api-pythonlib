@@ -51,7 +51,7 @@ jobs:
                     lfs: true
             -
                 name: 🤠 Roundup
-                uses: NASA-PDS/roundup-action@master
+                uses: NASA-PDS/roundup-action@main
                 with:
                     assembly: unstable
                 env:
