@@ -1,0 +1,12 @@
+graft src
+include versioneer.py
+include src/pds/archive_analytics/_version.py
+global-exclude *.py[cod]
+
+# Include package-level files and directories here; e.g.:
+#
+# include *.png *.jpeg
+# exclude *.webp
+# graft spice-kernels
+# prune src/pds/archive_analytics/obsolete-dir
+# global-exclude *.log *.so
